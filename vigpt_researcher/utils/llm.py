@@ -1,10 +1,4 @@
 from __future__ import annotations
-
-import os
-import sys
-
-# print(sys.path)
-
 import sys
 sys.path.append('..')
 
@@ -16,6 +10,7 @@ from colorama import Fore, Style
 from typing import Optional 
 
 from master.prompts import auto_agent_instructions
+
 
 async def create_chat_completion(
     messages: list,
