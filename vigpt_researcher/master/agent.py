@@ -125,6 +125,8 @@ class VIGPTResearcher:
         search_results = retriever.search(max_results=self.cfg.max_search_results_per_query)
         new_search_urls = await self.get_new_urls([url.get("href") for url in search_results])
         
+        # Scrape urls
+        await stream_output("logs", f"📝 Đang quét urls {new_search_urls}...\n", self.websocket)
         await stream_output("logs", f"🤔 Đang tìm kiếm thông tin liên quan...\n", self.websocket)
         scraped_content_results = scrape_urls(new_search_urls, self.cfg)
         return scraped_content_results

@@ -7,7 +7,7 @@ def generate_search_queries_prompt(question, max_iterations=3):
     """
     
     return f'Viết {max_iterations} truy vấn tìm kiếm trên Google để tìm thông tin một cách khách quan từ câu hỏi sau: "{question}"' \
-           f'Sử dụng ngày hiện tại nếu cần: {datetime.now().strftime("%d/%m/%Y")}.\n' \
+           f'Sử dụng ngày hiện tại nếu cần: {datetime.now().strftime("%B %d, %Y")}.\n' \
            f'Bạn phải trả lời bằng một danh sách chuỗi theo định dạng sau: ["truy vấn 1", "truy vấn 2", "truy vấn 3"].'
 
 def generate_report_prompt(question, context, report_format="apa", total_words=1000):
@@ -29,7 +29,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
            f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
             f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất mà trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà liên quan đến chúng.\n"\
             f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
-            f"Cho rằng ngày hiện tại là {datetime.now().strftime('%d/%m/%Y')}"
+            f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
 
 def generate_resource_report_prompt(question, context, report_format="apa", total_words=1000):
     """Generates the resource report prompt for the given question and research summary.
@@ -49,7 +49,7 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân theo cú pháp Markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
         'Báo cáo phải có chiều dài tối thiểu là 700 từ.\n' \
-        'BẠN PHẢI bao gồm tất cả các URL nguồn tài liệu tham khảo có liên quan.'
+        'Bạn PHẢI bao gồm tất cả các URL nguồn tài liệu tham khảo có liên quan.'
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
     return f'"{context}"\n\n{query_prompt}'
@@ -84,19 +84,19 @@ def auto_agent_instructions():
         Máy chủ được xác định bởi lĩnh vực của chủ đề và tên cụ thể của máy chủ có thể được sử dụng để nghiên cứu chủ đề được cung cấp. Đại lý được phân loại theo lĩnh vực chuyên môn của họ, và mỗi loại máy chủ được liên kết với một biểu tượng emoji tương ứng.
 
         Ví dụ:
-        task: "nên đầu tư vào cổ phiếu của Apple không?"
+        task: "Nên đầu tư vào cổ phiếu của Apple không?"
         response: 
         {
             "server": "💰 Đại lý Tài chính",
             "agent_role_prompt: "Bạn là một trợ lý trí tuệ nhân tạo về phân tích tài chính có kinh nghiệm. Mục tiêu chính của bạn là soạn thảo các báo cáo tài chính toàn diện, sáng suốt, không thiên vị và được sắp xếp phương pháp dựa trên dữ liệu và xu hướng được cung cấp."
         }
-        task: "việc bán lại giày thể thao có thể trở thành lợi nhuận không?"
+        task: "Việc bán lại giày thể thao có thể trở thành lợi nhuận không?"
         response: 
         { 
             "server":  "📈 Đại lý Phân tích Kinh doanh",
             "agent_role_prompt": "Bạn là một trợ lý trí tuệ nhân tạo về phân tích kinh doanh có kinh nghiệm. Mục tiêu chính của bạn là tạo ra các báo cáo kinh doanh toàn diện, sâu sắc, không thiên vị và được sắp xếp phương pháp dựa trên dữ liệu kinh doanh, xu hướng thị trường và phân tích chiến lược được cung cấp."
         }
-        task: "những địa điểm thú vị nhất ở Tel Aviv là gì?"
+        task: "Những địa điểm thú vị nhất ở Tel Aviv là gì?"
         response:
         {
             "server:  "🌍 Đại lý Du lịch",
