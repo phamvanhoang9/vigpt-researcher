@@ -12,7 +12,7 @@ async def get_report(query: str, report_type: str) -> str:
     return report
 
 if __name__ == "__main__":
-    query = "Đại học Bách Khoa Hà Nội thành lập vào thời gian nào?"
+    query = "Bạn có thể cho tôi biết thông tin về ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội được không?"
     report_type = "research_report"
     
     report = asyncio.run(get_report(query, report_type))
