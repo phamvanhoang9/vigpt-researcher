@@ -13,13 +13,13 @@ from master.prompts import auto_agent_instructions
 
 
 async def create_chat_completion(
-    messages: list,
-    model: Optional[str] = None,
-    temperature: float = 1.0,
-    max_tokens: Optional[int] = None,
-    llm_provider: Optional[str] = None,
-    stream: Optional[bool] = False,
-    websocket: WebSocket | None = None,
+        messages: list,  # type: ignore
+        model: Optional[str] = None,
+        temperature: float = 0.9,
+        max_tokens: Optional[int] = None,
+        llm_provider: Optional[str] = None,
+        stream: Optional[bool] = False,
+        websocket: WebSocket | None = None,
 ) -> str:
     """Create a chat completion using the OpenAI API
     Args:
@@ -33,54 +33,59 @@ async def create_chat_completion(
     Returns:
         str: The response from the chat completion
     """
-    
+
     # validate input
     if model is None:
         raise ValueError("Model cannot be None")
     if max_tokens is not None and max_tokens > 8001:
         raise ValueError(f"Max tokens cannot be more than 8001, but got {max_tokens}")
-    
+
     # create response
-    for attempt in range(10): # maximum of 10 attempts
+    for attempt in range(10):  # maximum of 10 attempts
         response = await send_chat_completion_request(
             messages, model, temperature, max_tokens, stream, llm_provider, websocket
         )
-        return response 
-    
+        return response
+
     logging.error("Failed to get response from OpenAI API")
     raise RuntimeError("Failed to get response from OpenAI API")
-        
+
+
+import logging
+
+
 async def send_chat_completion_request(
-    messages, model, temperature, max_tokens, stream, llm_provider, websocket
+        messages, model, temperature, max_tokens, stream, llm_provider, websocket
 ):
     if not stream:
         result = lc_openai.ChatCompletion.create(
-            model=model, # chane model here to use different models
+            model=model,  # Change model here to use different models
             messages=messages,
             temperature=temperature,
             max_tokens=max_tokens,
-            provider=llm_provider, # change provider here to use a different API
+            provider=llm_provider,  # Change provider here to use a different API
         )
         return result["choices"][0]["message"]["content"]
     else:
         return await stream_response(model, messages, temperature, max_tokens, llm_provider, websocket)
-    
+
+
 async def stream_response(model, messages, temperature, max_tokens, llm_provider, websocket=None):
     paragraph = ""
     response = ""
-    
+
     for chunk in lc_openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens,
-        provider=llm_provider,
-        stream=True,
+            model=model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            provider=llm_provider,
+            stream=True,
     ):
         content = chunk["choices"][0].get("delta", {}).get("content")
         if content is not None:
             response += content
-            paragraph += content 
+            paragraph += content
             if "\n" in paragraph:
                 if websocket is not None:
                     await websocket.send_json({"type": "report", "output": paragraph})
@@ -88,7 +93,8 @@ async def stream_response(model, messages, temperature, max_tokens, llm_provider
                     print(f"{Fore.GREEN}{paragraph}{Style.RESET_ALL}")
                 paragraph = ""
     return response
-    
+
+
 def choose_agent(smart_llm_model: str, llm_provider: str, task: str) -> dict:
     """Determines what server should be used
     Args:
@@ -104,8 +110,7 @@ def choose_agent(smart_llm_model: str, llm_provider: str, task: str) -> dict:
             model=smart_llm_model,
             messages=[
                 {"role": "system", "content": f"{auto_agent_instructions()}"},
-                {"role": "user", "content": f"task: {task}"}
-            ],
+                {"role": "user", "content": f"task: {task}"}],
             temperature=0,
             llm_provider=llm_provider
         )
