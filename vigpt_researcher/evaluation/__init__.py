@@ -1,3 +1,3 @@
 """ 
-Using BERT Score and Perlexity to evaluate the quality of the generated text.
+Using BERT score and ROUGE socre to evaluate the quality of the generated text.
 """
