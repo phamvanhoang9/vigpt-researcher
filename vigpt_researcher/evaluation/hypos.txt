@@ -1,1 +1,38 @@
-# Báo cáo về Ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội ## Giới thiệu chung Trong bối cảnh cuộc Cách mạng công nghiệp lần thứ 4 đang diễn ra mạnh mẽ, ngành Điện tử - Viễn thông trở thành một trong những ngành học quan trọng và tiềm năng, đóng vai trò chủ chốt trong sự phát triển của xã hội hiện đại. Đại học Bách khoa Hà Nội (HUST), một trong những trường đại học hàng đầu Việt Nam, đã và đang đào tạo ngành Điện tử - Viễn thông, nhằm cung cấp nguồn nhân lực chất lượng cao cho thị trường lao động trong và ngoài nước. ## Chương trình đào tạo Chương trình đào tạo ngành Điện tử - Viễn thông tại HUST được thiết kế để trang bị cho sinh viên những kiến thức toàn diện từ cơ bản đến chuyên sâu. Sinh viên sẽ được học các khối kiến thức toán học và khoa học cơ bản, kiến thức cơ sở ngành Điện tử - Viễn thông, kiến thức bổ trợ xã hội và kỹ năng mềm, cũng như khối kiến thức tự chọn chuyên sâu theo các định hướng như kỹ thuật điện tử, kỹ thuật máy tính, kỹ thuật thông tin truyền thông, kỹ thuật y sinh, kỹ thuật điện tử hàng không vũ trụ, kỹ thuật đa phương tiện, kỹ thuật vi điện tử và công nghệ nano (HUST, n.d.). Sinh viên có cơ hội lựa chọn một trong các chuyên ngành sau: - Điện tử và kỹ thuật máy tính: chuyên về lập trình cho các hệ thống nhúng. - Kỹ thuật thông tin - truyền thông: chuyên về hệ thống viễn thông, kỹ thuật truyền số liệu. - Kỹ thuật y sinh: chuyên nghiên cứu các thiết bị y tế phục vụ khám chữa bệnh. - Kỹ thuật điện tử hàng không vũ trụ: nghiên cứu về các loại máy bay tự hành. - Kỹ thuật Đa phương tiện: nghiên cứu về các thiết bị nghe nhìn, điều chỉnh âm độ của các thiết bị thu âm (Hocmai.vn, n.d.). ## Tiêu chuẩn đầu vào và cơ hội chuyển tiếp Điểm chuẩn ngành Kỹ thuật Điện tử - Viễn thông tại HUST thường nằm ở mức cao, phản ánh sự cạnh tranh và chất lượng đào tạo của ngành. Ví dụ, điểm chuẩn năm 2023 qua các phương thức xét tuyển khác nhau như Đánh giá tư duy và kết quả thi tốt nghiệp THPT dao động từ 24.5 đến 26.8 (Hocmai.vn, n.d.). Ngoài ra, sinh viên còn có cơ hội chuyển tiếp sang các chương trình đào tạo quốc tế, như chương trình liên kết với Đại học Leibniz Hannover (Đức), với giai đoạn đầu học tại HUST và có cơ hội chuyển tiếp sang Đức để học bằng thạc sĩ (HUST, n.d.). ## Cơ hội nghề nghiệp Sau khi tốt nghiệp, sinh viên ngành Điện tử - Viễn thông của HUST có thể làm việc tại các hãng thiết bị, các tập đoàn, công ty đa quốc gia về Điện tử - Viễn thông. Theo thống kê, 95% sinh viên khoa Kỹ thuật Điện tử - Viễn thông của HUST có việc làm ngay sau một năm tốt nghiệp với mức lương khởi điểm từ 8-20 triệu đồng (Hocmai.vn, n.d.). Các vị trí công việc sau khi tốt nghiệp bao gồm nhưng không giới hạn ở: - Chuyên viên quản lý kỹ thuật và sản phẩm, quản lý dự án kinh doanh. - Chuyên viên tư vấn, thiết kế và vận hành kỹ thuật tại các đài phát thanh, đài truyền hình, công ty tư vấn thiết kế mạng viễn thông, sản xuất thiết bị Điện tử - Viễn Thông. - Nghiên cứu và phát triển, mạng vô tuyến, định vị dẫn đường, thiết bị tín hiệu đa phương tiện (Jobsnew.vn, n.d.). ## Kết luận Ngành Điện tử - Viễn thông tại Đại học Bách khoa Hà Nội không chỉ cung cấp một nền tảng kiến thức vững chắc mà còn mở ra cơ hội nghề nghiệp rộng lớn trong một lĩnh vực đang phát triển mạnh mẽ. Với chương trình đào tạo chất lượng cao, tiêu chuẩn đầu vào nghiêm ngặt và cơ hội chuyển tiếp quốc tế, sinh viên tốt nghiệp từ HUST có thể tự tin bước vào thị trường lao động và đóng góp vào sự phát triển của ngành công nghiệp Điện tử - Viễn thông cả trong và ngoài nước.
+# Báo cáo về Ngành Điện tử - Viễn thông Hệ Đại trà của Đại học Bách khoa Hà Nội
+
+## Tổng quan về ngành Điện tử - Viễn thông
+
+Ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội (HUST) là một trong những ngành đào tạo mũi nhọn, đáp ứng nhu cầu nhân lực chất lượng cao trong kỷ nguyên số và cuộc Cách mạng công nghiệp lần thứ 4. Với mã xét tuyển ET1, ngành này thu hút một lượng lớn sinh viên có đam mê và năng lực trong lĩnh vực kỹ thuật, đặc biệt là điện tử và viễn thông (HUST Admissions Information, n.d.).
+
+### Cấu trúc khóa học
+
+Chương trình đào tạo ngành Điện tử - Viễn thông tại HUST được thiết kế để cung cấp cho sinh viên một nền tảng kiến thức vững chắc, bao gồm:
+
+- Khối kiến thức toán học và khoa học cơ bản.
+- Khối kiến thức cơ sở cốt lõi ngành Điện tử - Viễn thông.
+- Khối kiến thức bổ trợ kiến thức xã hội và kỹ năng mềm.
+- Khối kiến thức tự chọn chuyên sâu theo các định hướng kỹ thuật điện tử, kỹ thuật máy tính, kỹ thuật thông tin truyền thông, và nhiều lĩnh vực khác (HUST Admissions Information, n.d.).
+
+### Yêu cầu nhập học
+
+Để được tuyển sinh vào ngành Điện tử - Viễn thông, sinh viên cần đáp ứng các yêu cầu về điểm thi đầu vào, đồng thời phải có năng lực và sự quan tâm đến lĩnh vực kỹ thuật. Chỉ tiêu tuyển sinh hàng năm cho ngành này là 480 sinh viên, cho thấy sự cạnh tranh và quy mô lớn của ngành (HUST Admissions Information, n.d.).
+
+### Cơ hội nghề nghiệp sau khi tốt nghiệp
+
+Sinh viên tốt nghiệp ngành Điện tử - Viễn thông có thể đảm nhận nhiều vị trí công việc khác nhau, từ thiết kế và chế tạo phần cứng, lập trình cho các thiết bị điện tử, đến việc làm trong lĩnh vực an toàn thông tin. Các cơ hội việc làm bao gồm làm việc tại các hãng thiết bị điện tử, các tập đoàn, công ty đa quốc gia về Điện tử - Viễn thông, và nhiều lĩnh vực khác như điện lực, ngân hàng, giao thông, quốc phòng - an ninh (HUST Admissions Information, n.d.; Hocmai.vn, 2024).
+
+Theo thống kê, 95% sinh viên khoa Kỹ thuật Điện tử - Viễn thông Đại học Bách Khoa Hà Nội có việc làm ngay sau một năm tốt nghiệp với mức lương khởi điểm từ 8-20 triệu đồng, phản ánh sức hấp dẫn và tiềm năng phát triển của ngành (Hocmai.vn, 2024).
+
+### Chương trình đào tạo tiên tiến và liên kết quốc tế
+
+Ngoài chương trình đại trà, HUST còn cung cấp chương trình tiên tiến Kỹ thuật Điện tử - Viễn thông (ET-E4) với ngôn ngữ đào tạo là tiếng Anh, cùng cơ hội học tập và làm việc trong môi trường quốc tế. Sinh viên có thể tham gia các chương trình liên kết với các trường đại học nổi tiếng thế giới, mở rộng cơ hội học tập và nghề nghiệp (HUST Admissions Information, n.d.).
+
+## Kết luận
+
+Ngành Điện tử - Viễn thông tại Đại học Bách khoa Hà Nội không chỉ cung cấp một chương trình đào tạo chất lượng cao mà còn mở ra cơ hội nghề nghiệp rộng lớn trong và ngoài nước. Với sự phát triển không ngừng của công nghệ và nhu cầu nhân lực chất lượng cao, sinh viên của ngành này có thể tự tin bước vào thị trường lao động với nhiều cơ hội thăng tiến và phát triển sự nghiệp.
+
+## Tài liệu tham khảo
+
+HUST Admissions Information. (n.d.). Ngành Điện tử và Viễn thông. Retrieved March 23, 2024, from https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-va-vien-thong
+
+Hocmai.vn. (2024, March 20). Ngành Kỹ thuật Điện tử – Viễn thông Đại học Bách Khoa Hà Nội có gì? Retrieved March 23, 2024, from https://huongnghiep.hocmai.vn/chuyen-nganh/ky-thuat-dien-tu-vien-thong/dai-hoc-bach-khoa-ha-noi/
