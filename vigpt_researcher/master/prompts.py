@@ -2,8 +2,10 @@ from datetime import datetime
 
 def generate_search_queries_prompt(question, max_iterations=3):
     """ Generates the search queries prompt for the given question.
-    Args: question (str): The question to generate the search queries prompt for
-    Returns: str: The search queries prompt for the given question
+    Args: 
+        question (str): The question to generate the search queries prompt for
+    Returns:
+        str: The search queries prompt for the given question
     """
     
     return f'Viết {max_iterations} truy vấn tìm kiếm trên Google để tìm thông tin một cách khách quan từ câu hỏi hoặc nội dung sau: "{question}"' \
@@ -12,9 +14,11 @@ def generate_search_queries_prompt(question, max_iterations=3):
 
 def generate_report_prompt(question, context, report_format="apa", total_words=1000):
     """ Generates the report prompt for the given question and research summary.
-    Args: question (str): The question to generate the report prompt for
-            research_summary (str): The research summary to generate the report prompt for
-    Returns: str: The report prompt for the given question and research summary
+    Args: 
+        question (str): The question to generate the report prompt for
+        context (str): The research summary to generate the report prompt for
+    Returns:
+        str: The report prompt for the given question and research summary
     """
     
     return f'Thông tin: """{context}"""\n\n' \
@@ -33,11 +37,9 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
 
 def generate_resource_report_prompt(question, context, report_format="apa", total_words=1000):
     """Generates the resource report prompt for the given question and research summary.
-
     Args:
         question (str): The question to generate the resource report prompt for.
         context (str): The research summary to generate the resource report prompt for.
-
     Returns:
         str: The resource report prompt for the given question and research summary.
     """
@@ -56,9 +58,11 @@ def generate_custom_report_prompt(query_prompt, context, report_format="apa", to
 
 def generate_outline_report_prompt(question, context, report_format="apa", total_words=1000):
     """ Generates the outline report prompt for the given question and research summary.
-    Args: question (str): The question to generate the outline report prompt for
-            research_summary (str): The research summary to generate the outline report prompt for
-    Returns: str: The outline report prompt for the given question and research summary
+    Args:   
+        question (str): The question to generate the outline report prompt for
+        context (str): The research summary to generate the outline report prompt for
+    Returns: 
+        str: The outline report prompt for the given question and research summary
     """
     
     return f'"""{context}""" Dựa trên thông tin đã cung cấp, hãy tạo ra một bản phác thảo cho một báo cáo nghiên cứu bằng cú pháp Markdown' \
@@ -67,11 +71,29 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
        ' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và tối thiểu là 1200 từ.' \
        ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
 
+def generate_answer_question_prompt(question, context, report_type=None, total_words=250):
+    """ Generates the answer for the given question.
+    Args: 
+        question (str): The question to generate the answer.
+        context (str): The research summary to generate the answer.
+    Returns:
+        str: The answer for the given question and research summary.
+    """
+    
+    return f'Thông tin: """{context}"""\n\n' \
+        f'Sử dụng thông tin trên, hãy trả lời câu hỏi sau: "{question}. Câu trả lời tập trung vào đúng trọng tâm của câu hỏi, ví dụ:' \
+        f'Câu hỏi: "CEO của OpenAI là ai?" thì câu trả lời phải là: "CEO của OpenAI là ông Sam Altman".\n' \
+        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với người dùng.\n' \
+        f'Bạn có thể giải thích thêm nhưng nhất định phải ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
+        f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
+        f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.'
+        
 def get_report_by_type(report_type):
     report_type_mapping = {
         'báo cáo': generate_report_prompt,
         'nguồn tham khảo': generate_resource_report_prompt,
         'khung báo cáo': generate_outline_report_prompt,
+        'câu trả lời': generate_answer_question_prompt,
         'custom_report': generate_custom_report_prompt
     }
     
