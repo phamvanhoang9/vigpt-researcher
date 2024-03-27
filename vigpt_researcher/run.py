@@ -19,11 +19,15 @@ def save_report(report, file_path):
         file.write(report.strip()) # remove leading and trailing whitespaces
 
 if __name__ == "__main__":
-    query = "Cơ hội việc làm cho sinh viên ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội sau khi tốt nghiệp"
-    report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo"]
+    query = ["Cơ hội việc làm cho sinh viên ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội sau khi tốt nghiệp",
+             "Cách ôn luyện cho kỳ thi tư duy Đại học Bách Khoa Hà Nội",
+             "Trình bày cơ chế hoạt động của mô hình GPT-4",
+             "CEO Sam Altman đã có những cống hiến gì cho OpenAI?",
+             "Tôi có nên đầu tư bất động sản ở Việt Nam khi đang là sinh viên không?"]
+    report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query, report_type[0]))
+    report = asyncio.run(get_report(query[4], report_type[1]))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
