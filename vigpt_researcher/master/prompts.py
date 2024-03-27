@@ -86,7 +86,8 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
         f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với người dùng.\n' \
         f'Bạn có thể giải thích thêm nhưng nhất định phải ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
-        f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.'
+        f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \
+        f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
         
 def get_report_by_type(report_type):
     report_type_mapping = {
