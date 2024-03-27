@@ -69,9 +69,9 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
 
 def get_report_by_type(report_type):
     report_type_mapping = {
-        'research_report': generate_report_prompt,
-        'resource_report': generate_resource_report_prompt,
-        'outline_report': generate_outline_report_prompt,
+        'báo cáo': generate_report_prompt,
+        'nguồn tham khảo': generate_resource_report_prompt,
+        'khung báo cáo': generate_outline_report_prompt,
         'custom_report': generate_custom_report_prompt
     }
     
