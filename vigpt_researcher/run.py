@@ -8,8 +8,8 @@ from termcolor import colored
 import time
 
 
-async def get_report(query: str, report_type: str) -> str:
-    researcher = VIGPTResearcher(query, report_type)
+async def get_report(query: str, report_type: str, source_urls: set) -> str:
+    researcher = VIGPTResearcher(query, report_type, source_urls)
     report = await researcher.run()
     
     return report
@@ -31,26 +31,32 @@ if __name__ == "__main__":
              "Bạn có thể cho tôi một đoạn thơ ngắn để tỏ tình crush được không?",
              "Cách viết một bài báo khoa học chuẩn IEEE",
              "Việc dành học bổng ở Đại học Bách Khoa Hà Nội có khó không?",
+             "Cách để trở thành một sinh viên xuất sắc tại Đại học Bách Khoa Hà Nội",
+             "Tổng quan về Đại học Bách Khoa Hà Nội",
             ]
+    
+    query_eval = "Tóm tắt các nội dung trong bài báo gốc 'Attention is All You Need' của Vaswani et al. (2017)"
+    source_urls = set()
+    source_urls = source_urls.add("https://arxiv.org/pdf/1706.03762v7.pdf")
     
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query[8], report_type[3]))
+    report = asyncio.run(get_report(query_eval, report_type[0], source_urls))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
-    # report_without_references = report.split("## Tài Liệu Tham Khảo")[0]
-    # save_report(report_without_references, "evaluation/hypos.txt")
-    # print("-"*80)
-    # print(colored("Báo cáo đã được lưu vào thư mục evaluation/hypos.txt", "blue"))
-    # print("-"*80)  
-    # urls = re.findall(r'(https?://\S+)', report)
-    # with open("evaluation/refs.txt", "w") as file:
-    #     for url in urls:
-    #         file.write(url + '\n')    
-    # print(colored("Danh sách các tài liệu tham khảo đã được lưu vào thư mục evaluation/refs.txt", "green"))    
-    # print("-"*80)
-    # print("\n")
+    report_without_references = report.split("## Tài Liệu Tham Khảo")[0]
+    save_report(report_without_references, "evaluation/hypos.txt")
+    print("-"*80)
+    print(colored("Báo cáo đã được lưu vào thư mục evaluation/hypos.txt", "blue"))
+    print("-"*80)  
+    urls = re.findall(r'(https?://\S+)', report)
+    with open("evaluation/refs.txt", "w") as file:
+        for url in urls:
+            file.write(url + '\n')    
+    print(colored("Danh sách các tài liệu tham khảo đã được lưu vào thư mục evaluation/refs.txt", "green"))    
+    print("-"*80)
+    print("\n")
     
     print(report)
