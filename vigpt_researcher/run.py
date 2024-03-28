@@ -30,6 +30,7 @@ if __name__ == "__main__":
              "Thời tiết ở Hà Nội trong vài ngày tới",
              "Bạn có thể cho tôi một đoạn thơ ngắn để tỏ tình crush được không?",
              "Cách viết một bài báo khoa học chuẩn IEEE",
+             "Việc dành học bổng ở Đại học Bách Khoa Hà Nội có khó không?",
             ]
     
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
