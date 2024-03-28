@@ -25,13 +25,15 @@ if __name__ == "__main__":
              "Trình bày cơ chế hoạt động của mô hình GPT-4",
              "CEO Sam Altman đã có những cống hiến gì cho OpenAI?",
              "Tôi có nên đầu tư bất động sản ở Việt Nam khi đang là sinh viên không?",
-             "Bảng xếp hạng 10 tỷ phú giàu nhất thế giới ở thời điểm hiện tại"
+             "Bảng xếp hạng 10 tỷ phú giàu nhất thế giới ở thời điểm hiện tại",
+             "Cuộc đời của Steve Jobs như thế nào?",
+             "Thời tiết ở Hà Nội trong vài ngày tới"
             ]
     
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query[5], report_type[3]))
+    report = asyncio.run(get_report(query[7], report_type[3]))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
