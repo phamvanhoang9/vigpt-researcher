@@ -1,39 +1,29 @@
-# Cơ Hội Nghề Nghiệp Cho Sinh Viên Ngành Điện Tử - Viễn Thông Của Đại Học Bách Khoa Hà Nội Sau Khi Tốt Nghiệp
+# Báo cáo Phân Tích: "Attention is All You Need" của Vaswani et al. (2017)
 
-Ngành Điện tử - Viễn thông đã và đang trở thành một trong những ngành học quan trọng và không thể thiếu trong bối cảnh cuộc cách mạng công nghệ 4.0 đang diễn ra mạnh mẽ trên toàn cầu. Đối với sinh viên Đại học Bách khoa Hà Nội, một trong những trường đại học hàng đầu Việt Nam, cơ hội nghề nghiệp sau khi tốt nghiệp ngành này là vô cùng rộng mở và đa dạng.
+## Tóm Tắt
 
-## Tổng Quan về Ngành Điện tử - Viễn Thông
+Bài báo "Attention is All You Need" của Vaswani et al. (2017) đã đánh dấu một bước ngoặt trong lĩnh vực học sâu, đặc biệt là trong ngành xử lý ngôn ngữ tự nhiên (NLP). Công trình này giới thiệu mô hình Transformer, một kiến trúc mới không dựa trên mạng nơ-ron hồi quy (RNN) hay mạng nơ-ron tích chập (CNN) truyền thống, mà thay vào đó, nó dựa hoàn toàn vào cơ chế attention để xử lý dữ liệu tuần tự. Mô hình Transformer đã chứng minh được khả năng vượt trội so với các phương pháp trước đó trong nhiều tác vụ NLP, đặc biệt là dịch máy.
 
-Ngành Điện tử - Viễn thông bao gồm việc nghiên cứu, thiết kế, phát triển và ứng dụng các công nghệ liên quan đến điện tử và viễn thông. Sinh viên ngành này được đào tạo để trở thành những kỹ sư có khả năng làm việc trong môi trường công nghệ cao, đáp ứng nhu cầu ngày càng tăng về việc thiết kế và vận hành các hệ thống thông tin và truyền thông hiện đại (TopCV, n.d.).
+## Cấu Trúc Mô Hình Transformer
 
-## Cơ Hội Nghề Nghiệp Sau Khi Tốt Nghiệp
+Mô hình Transformer được cấu tạo từ hai phần chính: bộ mã hóa (encoder) và bộ giải mã (decoder). Mỗi bộ phần gồm nhiều lớp giống nhau, mỗi lớp bao gồm hai sub-layer chính là multi-head self-attention mechanism và position-wise feed-forward networks. Cấu trúc này cho phép mô hình xử lý dữ liệu đồng thời thay vì tuần tự, giúp tăng tốc độ huấn luyện và cải thiện hiệu suất.
 
-### Các Vị Trí Công Việc Tiềm Năng
+### Multi-Head Attention
 
-Sinh viên tốt nghiệp ngành Điện tử - Viễn thông có thể đảm nhận nhiều vị trí công việc khác nhau, bao gồm:
+Cơ chế attention trong Transformer được thiết kế để mô hình có thể tập trung vào các phần quan trọng của câu. Multi-head attention cho phép mô hình thực hiện nhiều tác vụ attention đồng thời, từ đó nắm bắt được các mối quan hệ phức tạp và đa dạng giữa các từ. Điều này giúp mô hình có khả năng hiểu ngữ cảnh tốt hơn và cải thiện đáng kể chất lượng dịch.
 
-1. **Chuyên viên quy hoạch, thiết kế và tối ưu hóa hệ thống mạng** tại các công ty viễn thông lớn như VNPT, Viettel, Vinaphone, Mobiphone (Bao An Telecom, n.d.).
-2. **Chuyên viên thiết kế, tư vấn và điều hành công tác kỹ thuật** tại các đài phát thanh, truyền hình như VTV, HTV, SCTV (Bao An Telecom, n.d.).
-3. **Chuyên viên nghiên cứu và thiết kế** tại các công ty sản xuất thiết bị điện tử viễn thông, âm thanh hình ảnh, công ty thiết kế sản xuất vi mạch như Aver, Maxhub, FPT, Samsung, LG, Intel, Panasonic (Bao An Telecom, n.d.).
-4. **Chuyên viên vận hành, thiết kế và bảo trì thiết bị điện tử, tự động hóa** trong các đơn vị, doanh nghiệp (Bao An Telecom, n.d.).
-5. **Kỹ sư viết phần mềm máy tính**, phát triển ứng dụng và dịch vụ kỹ thuật số (TopCV, n.d.).
+### Positional Encoding
 
-### Xu Hướng Thị Trường Lao Động
+Do Transformer không sử dụng RNN hay CNN, nó không có khả năng nhận diện thứ tự của dữ liệu tuần tự. Để giải quyết vấn đề này, Vaswani et al. đã đưa vào positional encoding, một dạng thông tin vị trí được thêm vào đầu vào của mô hình để cung cấp thông tin về thứ tự từ trong câu.
 
-Theo một báo cáo từ Trung tâm Dự báo nhu cầu nhân lực và Thông tin thị trường lao động TPHCM, giai đoạn từ 2020 – 2025, nhu cầu tuyển dụng lao động trong ngành Điện tử - Viễn thông là khoảng 16 nghìn người/năm và có xu hướng tăng lên qua các năm sau đó (TopCV, n.d.). Điều này cho thấy tiềm năng việc làm cho sinh viên ngành này là rất lớn.
+## Hiệu Suất và Ứng Dụng
 
-### Tác Động của Công Nghệ 4.0 và 5G
+Transformer đã đạt được những kết quả ấn tượng trong các tác vụ dịch máy, vượt qua các phương pháp sử dụng RNN và CNN. Ngoài ra, kiến trúc này còn được áp dụng thành công trong nhiều tác vụ NLP khác như phân loại văn bản, tạo câu tự động, và hiểu ngôn ngữ tự nhiên.
 
-Sự phát triển của công nghệ 4.0 và triển vọng của mạng 5G mở ra cơ hội nghề nghiệp mới và đòi hỏi kỹ năng chuyên môn cao từ các kỹ sư Điện tử - Viễn thông. Các công ty và tổ chức không chỉ trong lĩnh vực viễn thông mà còn trong các ngành như điện lực, ngân hàng, giao thông, quốc phòng - an ninh cũng đều cần sử dụng hạ tầng mạng viễn thông và máy tính (Hotcourses, n.d.).
+## Phân Tích và Đánh Giá
 
-### Mức Lương và Triển Vọng Phát Triển
-
-Mức lương cho các vị trí trong ngành Điện tử - Viễn thông được đánh giá là tương đối cao so với mặt bằng chung. Với kinh nghiệm và thời gian làm việc, có thể giữ vị trí Trưởng bộ phận kỹ thuật, Giám đốc kỹ thuật tại các doanh nghiệp, các công ty trong lĩnh vực điện tử, viễn thông, truyền thông (Bao An Telecom, n.d.).
-
-### Nhu Cầu Nhân Lực và Đào Tạo
-
-Vietnamworks dự báo, Việt Nam đang thiếu 400.000 nhân lực công nghệ thông tin và điện tử viễn thông và mỗi năm cần cung ứng mới tới 78.000 lao động. Tuy nhiên, mỗi năm chỉ có khoảng 50.000 sinh viên tốt nghiệp, tạo ra "cơn khát" nhân lực trong ngành này (Bao An Telecom, n.d.).
+Mô hình Transformer đã mở ra một hướng đi mới cho NLP, nơi mà cơ chế attention trở thành trọng tâm. Sự đơn giản nhưng hiệu quả của kiến trúc này đã thúc đẩy sự phát triển của các mô hình sau này như BERT và GPT, đồng thời tạo ra một xu hướng mới trong việc thiết kế mô hình học sâu.
 
 ## Kết Luận
 
-Trong bối cảnh hiện nay, sinh viên ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội có cơ hội nghề nghiệp rộng mở sau khi tốt nghiệp. Với sự phát triển không ngừng của công nghệ và nhu cầu cao về nhân lực chất lượng trong lĩnh vực này, sinh viên có thể tự tin về một tương lai nghề nghiệp hứa hẹn và đầy thách thức. Để tận dụng cơ hội này, sinh viên cần trang bị kiến thức chuyên môn sâu, kỹ năng mềm và kỹ năng ngoại ngữ để sẵn sàng tham gia vào thị trường lao động đầy cạnh tranh và đa dạng.
+Bài báo "Attention is All You Need" không chỉ đưa ra một kiến trúc mô hình mới mà còn thay đổi cách chúng ta tiếp cận với các vấn đề trong NLP. Mô hình Transformer đã chứng minh rằng việc tập trung vào cơ chế attention có thể mang lại hiệu suất cao mà không cần dựa vào các kiến trúc phức tạp trước đó.
