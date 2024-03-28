@@ -24,7 +24,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
     return f'Thông tin: """{context}"""\n\n' \
            f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}" trong một báo cáo chi tiết.\n' \
            f"Báo cáo nên tập trung vào việc trả lời câu hỏi phải có cấu trúc tốt và cung cấp đủ thông tin cần thiết " \
-           f"sâu sắc và toàn diện, với các số liệu và dữ liệu nếu có sẵn và tối thiểu {total_words} từ.\n" \
+           f"sâu sắc và toàn diện, với các số liệu và dữ liệu nếu có sẵn và TỐI THIỂU {total_words} từ.\n" \
            f"Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng cách sử dụng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
            f"Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
            f"Sử dụng một lối viết không thiên vị và hãy tưởng tượng bạn như một nhà báo.\n" \
