@@ -22,20 +22,20 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
     """
     
     return f'Thông tin: """{context}"""\n\n' \
-           f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}" trong một báo cáo chi tiết --' \
-           " Báo cáo nên tập trung vào việc trả lời câu hỏi, phải có cấu trúc tốt, cung cấp thông tin" \
-           f" sâu sắc và toàn diện, với các số liệu và dữ liệu nếu có sẵn và tối thiểu {total_words} từ.\n" \
-           "Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng cách sử dụng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
-           "Bạn phải viết báo cáo bằng cú pháp markdown.\n " \
-           f"Sử dụng một lối viết không thiên vị và hãy tưởng tượng như một nhà báo.\n" \
-           "Bạn PHẢI xác định ý kiến của riêng mình dựa trên thông tin được cung cấp. KHÔNG nên rơi vào kết luận tổng quát và không ý nghĩa.\n" \
-           f"Bạn PHẢI viết tất cả các URL nguồn đã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
+           f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}" trong một báo cáo chi tiết.\n' \
+           f"Báo cáo nên tập trung vào việc trả lời câu hỏi phải có cấu trúc tốt và cung cấp đủ thông tin cần thiết " \
+           f"sâu sắc và toàn diện, với các số liệu và dữ liệu nếu có sẵn và tối thiểu {total_words} từ.\n" \
+           f"Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng cách sử dụng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
+           f"Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
+           f"Sử dụng một lối viết không thiên vị và hãy tưởng tượng bạn như một nhà báo.\n" \
+           f"Bạn PHẢI xác định ý kiến của riêng mình dựa trên thông tin được cung cấp. KHÔNG nên rơi vào kết luận tổng quát và không ý nghĩa.\n" \
+           f"Bạn PHẢI viết tất cả các nguồn URLđã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
            f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
             f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất để trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà liên quan đến chúng.\n"\
             f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
             f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
 
-def generate_resource_report_prompt(question, context, report_format="apa", total_words=1000):
+def generate_resource_report_prompt(question, context, report_format="apa", total_words=700):
     """Generates the resource report prompt for the given question and research summary.
     Args:
         question (str): The question to generate the resource report prompt for.
@@ -44,19 +44,20 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         str: The resource report prompt for the given question and research summary.
     """
     
-    return f'"""{context}"""\n\nDựa trên thông tin đã cung cấp, hãy tạo ra một báo cáo đề xuất tài liệu tham khảo cho' \
-        f'câu hỏi hoặc chủ đề sau: "{question}". Báo cáo nên cung cấp một phân tích chi tiết về mỗi nguồn tài liệu được đề xuất,' \
+    return f'Thông tin: """{context}"""\n\n' \
+        f'Dựa trên thông tin đã cung cấp, hãy tạo ra một báo cáo đề xuất tài liệu tham khảo cho ' \
+        f'câu hỏi hoặc chủ đề sau: "{question}". Báo cáo nên cung cấp một phân tích chi tiết về mỗi nguồn tài liệu được đề xuất, ' \
         'giải thích cách mỗi nguồn có thể đóng góp vào việc tìm câu trả lời cho câu hỏi nghiên cứu.\n' \
         'Tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
         'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp Markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
-        'Báo cáo phải có chiều dài tối thiểu là 700 từ.\n' \
-        'Bạn PHẢI bao gồm tất cả các URL nguồn tài liệu tham khảo có liên quan.'
+        f'Báo cáo phải có chiều dài tối thiểu là {total_words} từ.\n' \
+        'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan.'
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
     return f'"{context}"\n\n{query_prompt}'
 
-def generate_outline_report_prompt(question, context, report_format="apa", total_words=1000):
+def generate_outline_report_prompt(question, context, report_format="apa", total_words=1200):
     """ Generates the outline report prompt for the given question and research summary.
     Args:   
         question (str): The question to generate the outline report prompt for
@@ -68,7 +69,7 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
     return f'"""{context}""" Dựa trên thông tin đã cung cấp, hãy tạo ra một bản phác thảo cho một báo cáo nghiên cứu bằng cú pháp Markdown' \
        f' cho câu hỏi hoặc chủ đề sau: "{question}". Bản phác thảo nên cung cấp một khung cấu trúc tốt' \
        ' cho báo cáo nghiên cứu, bao gồm các phần chính, phần con và các điểm chính cần được bao quát.' \
-       ' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và tối thiểu là 1200 từ.' \
+       f' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và tối thiểu là {total_words} từ.' \
        ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
 
 def generate_answer_question_prompt(question, context, report_type=None, total_words=500):
@@ -88,7 +89,7 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
         f'Bạn có thể thêm các ICON để biểu lộ cảm xúc của bạn với người dụng, ví dụ: Bạn có thể tỏ ra rất hào hứng, vui vẻ khi được giúp đỡ người dùng, vv khi đó bạn có thể thêm ICON vui vẻ vào nhé!\n' \
         f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
-        f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 7 nguồn URL quan trọng nhất như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
+        f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 5 nguồn URL quan trọng nhất (bạn có thể đưa ra số lượng nguồn URL ít hơn nhé) như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
         f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \
         f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
         
@@ -132,9 +133,11 @@ def auto_agent_instructions():
 
 def generate_summary_prompt(query, data):
     """ Generates the summary prompt for the given question and text.
-    Args: question (str): The question to generate the summary prompt for
-            text (str): The text to generate the summary prompt for
-    Returns: str: The summary prompt for the given question and text
+    Args: 
+        question (str): The question to generate the summary prompt for
+        data (str): The text to generate the summary prompt for
+    Returns:
+        str: The summary prompt for the given question and text
     """
     
     return f'{data}\n Sử dụng văn bản trên, tóm tắt nó dựa trên nội dung hoặc câu hỏi sau: "{query}".\n Nếu câu hỏi ' \
