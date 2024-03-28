@@ -51,7 +51,7 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         'Tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
         'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp Markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
-        f'Báo cáo phải có chiều dài tối thiểu là {total_words} từ.\n' \
+        f'Báo cáo phải có chiều dài TỐI THIỂU là {total_words} từ.\n' \
         'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan.'
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
@@ -69,10 +69,10 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
     return f'"""{context}""" Dựa trên thông tin đã cung cấp, hãy tạo ra một bản phác thảo cho một báo cáo nghiên cứu bằng cú pháp Markdown' \
        f' cho câu hỏi hoặc chủ đề sau: "{question}". Bản phác thảo nên cung cấp một khung cấu trúc tốt' \
        ' cho báo cáo nghiên cứu, bao gồm các phần chính, phần con và các điểm chính cần được bao quát.' \
-       f' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và tối thiểu là {total_words} từ.' \
+       f' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và TỐI THIỂU là {total_words} từ.' \
        ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
 
-def generate_answer_question_prompt(question, context, report_type=None, total_words=500):
+def generate_answer_question_prompt(question, context, report_type=None, total_words=700):
     """ Generates the answer for the given question.
     Args: 
         question (str): The question to generate the answer.
