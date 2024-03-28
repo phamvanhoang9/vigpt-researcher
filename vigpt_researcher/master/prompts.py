@@ -71,7 +71,7 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
        ' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và tối thiểu là 1200 từ.' \
        ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
 
-def generate_answer_question_prompt(question, context, report_type=None, total_words=250):
+def generate_answer_question_prompt(question, context, report_type=None, total_words=500):
     """ Generates the answer for the given question.
     Args: 
         question (str): The question to generate the answer.
@@ -81,11 +81,14 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
     """
     
     return f'Thông tin: """{context}"""\n\n' \
-        f'Sử dụng thông tin trên, hãy trả lời câu hỏi sau: "{question}. Câu trả lời tập trung vào đúng trọng tâm của câu hỏi, ví dụ:' \
+        f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}. Câu trả lời tập trung vào đúng trọng tâm của câu hỏi, ví dụ:' \
         f'Câu hỏi: "CEO của OpenAI là ai?" thì câu trả lời phải là: "CEO của OpenAI là ông Sam Altman".\n' \
-        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với người dùng.\n' \
-        f'Bạn có thể giải thích thêm nhưng nhất định phải ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
+        f'Trước khi trả lời mỗi câu hỏi, tôi rất muốn bạn gửi lời cảm ơn chân thành đến người dùng khi đã đặt câu hỏi cho bạn, hãy nhiệt tình và chân thành nhất có thể.\n' \
+        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với người dùng, hãy tưởng tượng bạn như là một chatbot thân thiện và niềm nở đang tương tác với con người.\n' \
+        f'Bạn có thể thêm các ICON để biểu lộ cảm xúc của bạn với người dụng, ví dụ: Bạn có thể tỏ ra rất hào hứng, vui vẻ khi được giúp đỡ người dùng, vv khi đó bạn có thể thêm ICON vui vẻ vào nhé!\n' \
+        f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
+        f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 7 nguồn URL quan trọng nhất như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
         f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \
         f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
         
