@@ -28,7 +28,7 @@ if __name__ == "__main__":
              "Bảng xếp hạng 10 tỷ phú giàu nhất thế giới ở thời điểm hiện tại",
              "Cuộc đời của Steve Jobs như thế nào?",
              "Thời tiết ở Hà Nội trong vài ngày tới",
-             "Bạn có thể cho tôi một đoạn thơ ngắn để tỏ tình crush được không?"
+             "Bạn có thể cho tôi một đoạn thơ ngắn để tỏ tình crush được không?",
             ]
     
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
