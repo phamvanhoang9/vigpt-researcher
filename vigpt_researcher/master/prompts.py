@@ -29,7 +29,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
            f"Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
            f"Sử dụng một lối viết không thiên vị và hãy tưởng tượng bạn như một nhà báo.\n" \
            f"Bạn PHẢI xác định ý kiến của riêng mình dựa trên thông tin được cung cấp. KHÔNG nên rơi vào kết luận tổng quát và không ý nghĩa.\n" \
-           f"Bạn PHẢI viết tất cả các nguồn URLđã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
+           f"Bạn PHẢI viết tất cả các nguồn URL đã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
            f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
             f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất để trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà liên quan đến chúng.\n"\
             f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
