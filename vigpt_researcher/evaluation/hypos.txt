@@ -1,29 +1,27 @@
-# Báo cáo Phân Tích: "Attention is All You Need" của Vaswani et al. (2017)
+# Tổng quan về ngành Điện tử - Viễn thông của Đại học Bách Khoa Hà Nội
 
-## Tóm Tắt
+Ngành Điện tử - Viễn thông của Đại học Bách Khoa Hà Nội (HUST) là một trong những ngành học chủ chốt, phản ánh sự phát triển mạnh mẽ của công nghệ thông tin và truyền thông trong kỷ nguyên số hiện nay. Được biết đến là một trong những trường đại học hàng đầu Việt Nam, HUST không chỉ cung cấp một nền giáo dục chất lượng cao mà còn là nơi hình thành nên những kỹ sư tài năng, sẵn sàng đáp ứng nhu cầu nhân lực chất lượng cao của ngành công nghiệp này không chỉ ở Việt Nam mà còn trên toàn thế giới.
 
-Bài báo "Attention is All You Need" của Vaswani et al. (2017) đã đánh dấu một bước ngoặt trong lĩnh vực học sâu, đặc biệt là trong ngành xử lý ngôn ngữ tự nhiên (NLP). Công trình này giới thiệu mô hình Transformer, một kiến trúc mới không dựa trên mạng nơ-ron hồi quy (RNN) hay mạng nơ-ron tích chập (CNN) truyền thống, mà thay vào đó, nó dựa hoàn toàn vào cơ chế attention để xử lý dữ liệu tuần tự. Mô hình Transformer đã chứng minh được khả năng vượt trội so với các phương pháp trước đó trong nhiều tác vụ NLP, đặc biệt là dịch máy.
+## Chương trình đào tạo
 
-## Cấu Trúc Mô Hình Transformer
+Chương trình đào tạo ngành Điện tử - Viễn thông tại HUST được thiết kế để trang bị cho sinh viên một nền tảng kiến thức vững chắc, bao gồm cả lý thuyết và thực hành. Chương trình bao gồm các khối kiến thức toán học và khoa học cơ bản, kiến thức cơ sở ngành, kiến thức bổ trợ xã hội và kỹ năng mềm, cũng như khối kiến thức tự chọn chuyên sâu theo các định hướng kỹ thuật khác nhau như điện tử, máy tính, thông tin truyền thông, y sinh, hàng không vũ trụ, đa phương tiện, vi điện tử và công nghệ nano (HUST, n.d.).
 
-Mô hình Transformer được cấu tạo từ hai phần chính: bộ mã hóa (encoder) và bộ giải mã (decoder). Mỗi bộ phần gồm nhiều lớp giống nhau, mỗi lớp bao gồm hai sub-layer chính là multi-head self-attention mechanism và position-wise feed-forward networks. Cấu trúc này cho phép mô hình xử lý dữ liệu đồng thời thay vì tuần tự, giúp tăng tốc độ huấn luyện và cải thiện hiệu suất.
+Sinh viên có cơ hội tham gia vào các chương trình song bằng với các trường đại học đối tác quốc tế, mở rộng cơ hội học tập và nghiên cứu trong môi trường quốc tế. Điều này không chỉ giúp sinh viên nâng cao trình độ chuyên môn mà còn phát triển kỹ năng làm việc trong môi trường đa văn hóa, đa ngôn ngữ, một lợi thế cạnh tranh quan trọng trong thị trường lao động toàn cầu hiện nay (HUST, n.d.).
 
-### Multi-Head Attention
+## Cơ hội nghề nghiệp
 
-Cơ chế attention trong Transformer được thiết kế để mô hình có thể tập trung vào các phần quan trọng của câu. Multi-head attention cho phép mô hình thực hiện nhiều tác vụ attention đồng thời, từ đó nắm bắt được các mối quan hệ phức tạp và đa dạng giữa các từ. Điều này giúp mô hình có khả năng hiểu ngữ cảnh tốt hơn và cải thiện đáng kể chất lượng dịch.
+Với sự phát triển không ngừng của công nghệ, ngành Điện tử - Viễn thông đang chứng kiến một nhu cầu lớn về nhân lực chất lượng cao. Sinh viên tốt nghiệp từ HUST có thể đảm nhận nhiều vị trí công việc khác nhau trong lĩnh vực này, từ kỹ sư thiết kế, vận hành thiết bị và hệ thống điện tử viễn thông, đến nghiên cứu và phát triển trong các lĩnh vực như viễn thông, Internet, phần cứng và phần mềm cho thiết bị thông minh (HUST, n.d.).
 
-### Positional Encoding
+Theo thống kê, 95% sinh viên khoa Kỹ thuật Điện tử – Viễn thông Đại học Bách Khoa Hà Nội có việc làm ngay sau một năm tốt nghiệp với mức lương khởi điểm từ 8-20 triệu đồng, phản ánh sức hấp dẫn của ngành đối với thị trường lao động (Hocmai.vn, n.d.).
 
-Do Transformer không sử dụng RNN hay CNN, nó không có khả năng nhận diện thứ tự của dữ liệu tuần tự. Để giải quyết vấn đề này, Vaswani et al. đã đưa vào positional encoding, một dạng thông tin vị trí được thêm vào đầu vào của mô hình để cung cấp thông tin về thứ tự từ trong câu.
+## Cơ sở vật chất và môi trường học tập
 
-## Hiệu Suất và Ứng Dụng
+Đại học Bách Khoa Hà Nội đã đầu tư mạnh mẽ vào cơ sở vật chất để hỗ trợ công tác giảng dạy và nghiên cứu. Hệ thống phòng thí nghiệm đồng bộ, trang thiết bị máy móc hiện đại, cùng với các giảng đường được trang bị đầy đủ tiện nghi, tạo điều kiện tốt nhất cho sinh viên trong quá trình học tập và thực hành (HUST, n.d.).
 
-Transformer đã đạt được những kết quả ấn tượng trong các tác vụ dịch máy, vượt qua các phương pháp sử dụng RNN và CNN. Ngoài ra, kiến trúc này còn được áp dụng thành công trong nhiều tác vụ NLP khác như phân loại văn bản, tạo câu tự động, và hiểu ngôn ngữ tự nhiên.
+## Học phí và học bổng
 
-## Phân Tích và Đánh Giá
+Học phí cho chương trình đào tạo được cập nhật thường xuyên trên trang web của trường, và sinh viên có cơ hội nhận học bổng từ trường, các doanh nghiệp, và các trường đại học quốc tế đối tác. Tỉ lệ sinh viên đi du học có học bổng hàng năm chiếm trên 20% tổng số sinh viên tốt nghiệp, một con số ấn tượng cho thấy chất lượng đào tạo và sự quan tâm của trường đối với sự phát triển của sinh viên (HUST, n.d.).
 
-Mô hình Transformer đã mở ra một hướng đi mới cho NLP, nơi mà cơ chế attention trở thành trọng tâm. Sự đơn giản nhưng hiệu quả của kiến trúc này đã thúc đẩy sự phát triển của các mô hình sau này như BERT và GPT, đồng thời tạo ra một xu hướng mới trong việc thiết kế mô hình học sâu.
+## Kết luận
 
-## Kết Luận
-
-Bài báo "Attention is All You Need" không chỉ đưa ra một kiến trúc mô hình mới mà còn thay đổi cách chúng ta tiếp cận với các vấn đề trong NLP. Mô hình Transformer đã chứng minh rằng việc tập trung vào cơ chế attention có thể mang lại hiệu suất cao mà không cần dựa vào các kiến trúc phức tạp trước đó.
+Ngành Điện tử - Viễn thông tại Đại học Bách Khoa Hà Nội không chỉ cung cấp một chương trình đào tạo chất lượng cao mà còn mở ra cơ hội nghề nghiệp rộng lớn cho sinh viên trong thời đại số. Với sự đầu tư mạnh mẽ vào cơ sở vật chất, chương trình học linh hoạt và cơ hội học bổng hấp dẫn, HUST đang là điểm đến lý tưởng cho những ai muốn theo đuổi sự nghiệp trong lĩnh vực Điện tử - Viễn thông.
