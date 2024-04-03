@@ -41,7 +41,7 @@ if __name__ == "__main__":
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query_eval, report_type[0], source_urls))
+    report = asyncio.run(get_report(query[8], report_type[3], source_urls=None))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
