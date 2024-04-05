@@ -1,5 +1,5 @@
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 from .compression import ContextCompressor
 from .retriever import SearchAPIRetriever

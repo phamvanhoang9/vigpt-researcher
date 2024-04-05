@@ -1,6 +1,6 @@
 from __future__ import annotations
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 import logging
 import json 
@@ -9,7 +9,7 @@ from langchain.adapters import openai as lc_openai
 from colorama import Fore, Style 
 from typing import Optional 
 
-from master.prompts import auto_agent_instructions
+from vigpt_researcher.master.prompts import auto_agent_instructions
 
 
 async def create_chat_completion(

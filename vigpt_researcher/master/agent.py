@@ -1,11 +1,13 @@
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 import time 
-from config import Config 
-from master.functions import *
-from context.compression import ContextCompressor
-from memory import Memory 
+from vigpt_researcher.config import Config 
+# from ..config import Config
+from vigpt_researcher.master.functions import *
+# from ..master.functions import *
+from vigpt_researcher.context.compression import ContextCompressor
+from vigpt_researcher.memory import Memory 
 
 
 class VIGPTResearcher:
@@ -57,7 +59,7 @@ class VIGPTResearcher:
         report = await generate_report(query=self.query, context=self.context,
                                        agent_role_prompt=self.role, report_type=self.report_type,
                                        websocket=self.websocket, cfg=self.cfg)
-        time.sleep(2)
+        time.sleep(2) # Sleep for 2 seconds in order to prevent the report from being cut off
         return report
 
     async def get_context_by_urls(self, urls):

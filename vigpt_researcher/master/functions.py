@@ -1,11 +1,11 @@
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 import asyncio
-from utils.llm import *
-from scraper import Scraper
-from master.prompts import *
-from retrievers import TavilySearch, TavilyNews
+from vigpt_researcher.utils.llm import *
+from vigpt_researcher.scraper import Scraper
+from vigpt_researcher.master.prompts import *
+from vigpt_researcher.retrievers import TavilySearch, TavilyNews
 import json
 
 

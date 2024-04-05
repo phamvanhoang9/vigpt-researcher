@@ -1,5 +1,5 @@
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
 
 # Connect any client to vigpt-researcher using websocket
@@ -7,7 +7,7 @@ import asyncio
 import datetime 
 from typing import List, Dict 
 from fastapi import WebSocket
-from master.agent import VIGPTResearcher
+from vigpt_researcher.master.agent import VIGPTResearcher
 
 
 class WebSocketManager:

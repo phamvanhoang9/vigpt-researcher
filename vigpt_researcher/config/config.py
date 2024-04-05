@@ -3,7 +3,7 @@ import os
 
 
 class Config:
-    """Config class for ViGPT Researcher."""
+    """Config class for VIGPT Researcher."""
     
     def __init__(self, config_file: str = None):
         """Initialize the config class."""
