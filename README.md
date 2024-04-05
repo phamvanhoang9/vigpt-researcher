@@ -4,4 +4,4 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
 
 ## Issues
 1. *OSError: cannot load library 'gobject-2.0-0': gobject-2.0-0: cannot open shared object file*:
-    - **Solution**: `conda install -c anaconda pango` prior to `pip install weasyprint` works, but that's unfortunate that there is no pure pip solution where all project dependencies can be pip installed from a requirements file.
+    - **Solution for Ubuntu**: `conda install -c anaconda pango` prior to `pip install weasyprint` works, but that's unfortunate that there is no pure pip solution where all project dependencies can be pip installed from a requirements file.
