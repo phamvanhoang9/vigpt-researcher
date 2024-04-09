@@ -1,0 +1,52 @@
+1. Giới thiệu chung
+Ngành Kỹ thuật Điện tử – Viễn thông là lĩnh vực nghiên cứu và ứng dụng các công nghệ tiên tiến nhất để phát triển các thiết bị điện tử và hệ thống viễn thông. Trong ngành này, có hai lĩnh vực chính là Điện tử và Viễn thông. Lĩnh vực Điện tử tập trung vào nghiên cứu và sản xuất vi mạch điện tử, là bộ não điều khiển của các thiết bị thông minh. Lĩnh vực Viễn thông tập trung vào nghiên cứu và sử dụng các thiết bị tạo nên hệ thống mạng viễn thông, bao gồm các thành phần như thiết bị truyền dẫn, thiết bị chuyển mạch, thiết bị đầu cuối và môi trường truyền. Ngành Kỹ thuật Điện tử - Viễn thông đóng vai trò quan trọng trong viêc giúp xây dựng và duy trì các hệ thống mạng thông tin liên lạc toàn cầu, đảm bảo việc trao đổi thông tin diễn ra thuận lợi mọi lúc, mọi nơi.
+2. Chương trình đào tạo
+1. Mục tiêu chương trình
+Chương trình nhằm trang bị sinh viên với kiến thức và kỹ năng toàn diện về lĩnh vực Điện tử - Viễn thông. Sinh viên sẽ được phát triển về mặt chuyên môn, kỹ năng mềm và năng lực tự học để có thể thiết kế, chế tạo và vận hành các thiết bị và hệ thống điện tử viễn thông hiện đại.
+2. Cấu trúc chương trình
+Đào tạo Cử nhân: 4 năm
+Đào tạo tích hợp Cử nhân - Kỹ sư: 5 năm
+Đào tạo tích hợp Cử nhân - Thạc sĩ: 5,5 năm
+Đào tạo Cử nhân - Thạc sĩ - Tiến sĩ: 8,5 năm
+Chương trình được giảng dạy hoàn toàn bằng tiếng Anh và được giảng dạy bởi giảng viên Trường Đại học Bách khoa Hà Nội và giảng viên nước ngoài.
+Sinh viên có thể theo học các chương trình cấp bằng kép với các trường đại học đối tác như Wollongong – Úc (2+2, 3+1), Telecom ParisTech – Pháp (4+2), Viện KAIST – Hàn Quốc. Ngoài ra, sau khi hoàn thành chương trình cử nhân 4 năm, sinh viên có thể học chương trình thạc sĩ tại Đại học bang San Jose.
+3. Các chuyên ngành
+Sinh viên sau khi học khối kiến thức toán học và khoa học cơ bản, khối kiến thức cơ sở cốt lõi ngành Điện tử -Viễn thông, khối kiến thức bổ trợ kiến thức xã hội và kỹ năng mềm thì có thể chọn theo học các chuyên ngành như kỹ thuật điện tử, kỹ thuật máy tính, kỹ thuật thông tin truyền thông, kỹ thuật y sinh, kỹ thuật điện tử hàng không vũ trụ, kỹ thuật đa phương tiện, kỹ thuật vi điện tử và công nghệ nano. Mỗi khối ngành tập trung vào các lĩnh vực cụ thể để phát triển kiến thức sâu rộng và kỹ năng chuyên môn cho sinh viên.
+4. Phương pháp giảng dạy và học tập
+Chương trình được giảng dạy bằng tiếng Việt và tiếng Anh bởi đội ngũ giảng viên có kinh nghiệm từ Trường Đại học Bách khoa Hà Nội và giảng viên nước ngoài. Sinh viên có cơ hội được tiếp cận với các phương pháp giảng dạy hiện đại, bao gồm các bài giảng, thảo luận nhóm, thực hành và dự án thực tế. Đồng thời, sinh viên cũng được khuyến khích phát triển kỹ năng tự học thông qua các tài liệu tham khảo và dự án nghiên cứu.
+3. Cơ hội nghề nghiệp
+1. Việc làm sau khi tốt nghiệp
+Kỹ sư thiết kế và quản trị mạng viễn thông phức tạp.
+Kỹ sư phát triển phần mềm cho các thiết bị thông minh như điện thoại di động, thiết bị IoT.
+Kỹ sư vận hành hệ thống mạng viễn thông và hệ thống điện tử công nghiệp.
+Chuyên gia tư vấn và bán hàng các sản phẩm điện tử và viễn thông.
+2. Các công ty và tổ chức tuyển dụng
+Các công ty và tổ chức tuyển dụng trong ngành này cung cấp nhiêu mức lương hấp dẫn nhằm thu hút và giữ chân nhân tài có trình độ và kỹ năng chuyên môn cao. Mức lương cụ thể có thể biến đổi tùy theo cấp độ chuyên môn và kinh nghiệm làm việc. Mức lương trung bình cho các kỹ sư trong ngành là khoảng 11 triệu đồng/tháng, trong khi mức lương cao nhất có thể lên đến 50 triệu đồng/tháng.
+4. Nghiên cứu và phát triển
+1. Các dự án nghiên cứu
+Sinh viên được tham gia vào nhiều dự án nghiên cứu đa dạng trong lĩnh vực Viễn Thông. Các dự án này bao gồm nghiên cứu về kỹ thuật hệ thống thông tin, siêu cao tần và anten, mạng thông tin và mạng máy tính, xử lý số tín hiệu và ứng dụng.
+Các dự án nghiên cứu này không chỉ mang tính ứng dụng mà còn đóng góp vào việc định hình và phát triển các công nghệ mới trong lĩnh vực Viễn Thông. Một trong những dự án được đầu tư lớn có thể kể tới như dự án SAHEP do Ngân hàng thế giới tài trợ.
+2. Hợp tác quốc tế và công nghiệp
+Sinh viên có cơ hội tham gia hợp tác trong việc thực hiện các dự án nghiên cứu và phát triển với các đối tác quốc tế lớn như Samsung, G-Innovations…
+Sự hợp tác này không chỉ giúp trao đổi kiến thức và kỹ thuật mà còn tạo điều kiện cho sinh viên và cán bộ giảng dạy tham gia vào các dự án thực tế, nâng cao kỹ năng và kinh nghiệm trong ngành.
+5. Cơ sở vật chất và môi trường học tập
+Trường Đại học Bách Khoa Hà Nội có diện tích phục vụ giảng dạy và nghiên cứu khoa học rộng 26,2 hecta. Trường có hơn 200 giảng đường, phòng học, hội trường lớn và hệ thống phòng hội thảo; gần 200 phòng thí nghiệm, trong đó có 12 phòng thí nghiệm trọng điểm quốc gia và khoảng 20 xưởng thực tập, thực hành. Cơ sở vật chất hiện đại và tiện nghi được đầu tư, bao gồm hệ thống điều hòa và máy chiếu hiện đại trong 80% giảng đường, đảm bảo môi trường học tập và nghiên cứu chất lượng cao cho sinh viên.
+6. Học bổng và hỗ trợ sinh viên
+1. Các loại học bổng
+Sinh viên học ngành Điện tử - Viễn thông Đại học Bách khoa Hà Nội có cơ hội nhận được nhiều học bổng khác nhau từ quỹ học bổng của trường hoặc từ các doanh nghiệp đối tác, môt số học bổng tiêu biểu có thể kể tới như:
+Học bổng khuyến khích học tập
+Học bổng Trần Đại Nghĩa
+Học bổng tài trợ
+Học bổn trao đổi sinh viên quốc tế
+2. Cơ hội du học và trao đổi sinh viên
+Sinh viên có cơ hội nhận học bổng của Trường, học bổng trao đổi sinh viên từ các doanh nghiệp và các trường Đại học quốc tế là đối tác của Viện Điện tử- Viễn thông. Tỉ lệ sinh viên đi du học có học bổng hàng năm chiến trên 20% tổng số sinh viên tốt nghiệp.
+7. Điểm chuẩn và quy trình tuyển sinh
+Trường Đại học Bách Khoa Hà Nội có tổng chỉ tiêu tuyển sinh ngành Điện tử - Viễn thông là 100 sinh viên, trong đó gôm 60 sinh viên cho mã ngành ET-E4 và 40 sinh viên cho mã ngành ET-LUH, sử dụng ba phương thức chính:
+1. Xét tuyển tài năng (~20%): Thí sinh có thể dựa vào thành tích học tập xuất sắc, chứng chỉ quốc tế hoặc phỏng vấn.
+2. Xét tuyển theo điểm thi Đánh giá tư duy (~30%): Thí sinh cần đạt điểm TSA do trường quy định.
+3. Xét tuyển theo điểm thi tốt nghiệp THPT 2024 (~50%): Thí sinh cần đạt điểm sàn do trường quy định.
+8. Đánh giá và phản hồi từ cựu sinh viên
+Theo học ngành Kỹ thuật điện tử viễn thông (Mã ngành: ET1) tại Đại học Bách khoa Hà Nội sinh viên được trang bị một cách toàn diện cả về kỹ năng chuyên môn và kỹ năng mềm để có thể thiết kế, chế tạo, vận hành các thiết bị và hệ thống điện tử viễn thông, đáp ứng được yêu cầu về tính năng động và sáng tạo của lĩnh vực nghề nghiệp này
+Ngành điện tử viễn thông khá là rộng và các lĩnh vực thuộc ngành này cũng khá đa dạng và tiềm năng. Sau khi tốt nghiệp ra trường, sinh viên theo học ngành này có thể lựa chọn nhiều cơ hội khác nhau với mức đãi ngộ hấp dẫn.
+9. Kết luận và triển vọng tương lai
+Tốc độ phát triển nhanh chóng của lĩnh vực Điện tử - Viễn Thông vẫn đang sản sinh ra nhiều nghề nghiệp mới mà có thể chính bạn là một trong những người tiên phong đảm nhận. Không chỉ các công ty trong lĩnh vực viễn thông như Viettel, VNPT, FPT mà các doanh nghiệp trong nhiều lĩnh vực khác như điện lực, ngân hàng, giao thông, quốc phòng - an ninh... vẫn cần sử dụng hạ tầng mạng viễn thông và máy tính. Điều đó có nghĩa bạn sẽ có nhiều sự lựa chọn để phát triển sự nghiệp tương lai của mình. 
