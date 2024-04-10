@@ -10,7 +10,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from vigpt_researcher.config import Config
 from vigpt_researcher.utils.llm import create_chat_completion
 import os
-from md2pdf.core import md2pdf
+from md2pdf.core import md2pdf # convert markdown to pdf
 
 
 def split_text(text: str, max_length: int = 8192) -> Generator[str, None, None]:

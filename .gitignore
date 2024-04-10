@@ -29,3 +29,4 @@ build
 docs/build
 
 # Directories or Files
+.vscode
