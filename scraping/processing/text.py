@@ -1,5 +1,5 @@
 """Text processing functions"""
-import urllib
+import urllib # for encoding file path
 from typing import Dict, Generator, Optional
 
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -26,20 +26,20 @@ def split_text(text: str, max_length: int = 8192) -> Generator[str, None, None]:
     Raises:
         ValueError: If the text is longer than the maximum length
     """
-    paragraphs = text.split("\n")
-    current_length = 0
-    current_chunk = []
+    paragraphs = text.split("\n") # split text into paragraphs
+    current_length = 0 # current length of the chunk
+    current_chunk = [] # current chunk of text
 
-    for paragraph in paragraphs:
-        if current_length + len(paragraph) + 1 <= max_length:
-            current_chunk.append(paragraph)
-            current_length += len(paragraph) + 1
+    for paragraph in paragraphs: # iterate through paragraphs
+        if current_length + len(paragraph) + 1 <= max_length: # if the current length + length of the paragraph + 1 is less than the max length
+            current_chunk.append(paragraph) # append the paragraph to the current chunk
+            current_length += len(paragraph) + 1 # update the current length
         else:
-            yield "\n".join(current_chunk)
-            current_chunk = [paragraph]
-            current_length = len(paragraph) + 1
+            yield "\n".join(current_chunk) # yield the current chunk as a string in order to join the paragraphs
+            current_chunk = [paragraph] # set the current chunk to the paragraph
+            current_length = len(paragraph) + 1 # set the current length to the length of the paragraph + 1
 
-    if current_chunk:
+    if current_chunk: # if there is any remaining text in the current chunk after the loop
         yield "\n".join(current_chunk)
 
 
@@ -65,7 +65,7 @@ def summarize_text(
 
     summaries = []
     chunks = list(split_text(text))
-    scroll_ratio = 1 / len(chunks)
+    scroll_ratio = 1 / len(chunks) # why 1/len(chunks) ??  # scroll ratio is the ratio of the page to scroll to for each chunk of text to summarize 
 
     print(f"Summarizing url: {url} with total chunks: {len(chunks)}")
     for i, chunk in enumerate(chunks):
@@ -132,9 +132,9 @@ def create_message(chunk: str, question: str) -> Dict[str, str]:
     return {
         "role": "user",
         "content": f'"""{chunk}"""\n'
-        f'Using the above text, summarize it based on the following task or query: "{question}".\n'
-        f'If the query cannot be answered using the text, YOU MUST summarize the text in short.\n'
-        f'Include all factual information such as numbers, stats, quotes, etc if available.',
+        f'Sử dụng văn bản trên, tóm tắt nó dựa trên công việc hoặc truy vấn sau: "{question}".\n'
+        f'Nếu truy vấn không thể được trả lời bằng văn bản, BẠN PHẢI tóm tắt văn bản ngắn gọn.\n'
+        f'Bao gồm tất cả thông tin thực tế như số liệu, thống kê, trích dẫn, v.v. nếu có.',
     }
 
 def write_to_file(filename: str, text: str) -> None:
