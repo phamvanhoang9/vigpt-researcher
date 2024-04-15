@@ -27,6 +27,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
            f"sâu sắc và toàn diện, với các số liệu và dữ liệu nếu có sẵn và TỐI THIỂU {total_words} từ.\n" \
            f"Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng cách sử dụng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
            f"Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
+            f"Tất nhiên, bạn có thể vẽ bảng, biểu đồ, hình ảnh, vv nếu cần thiết.\n" \
            f"Sử dụng một lối viết không thiên vị và hãy tưởng tượng bạn như một nhà báo.\n" \
            f"Bạn PHẢI xác định ý kiến của riêng mình dựa trên thông tin được cung cấp. KHÔNG nên rơi vào kết luận tổng quát và không ý nghĩa.\n" \
            f"Bạn PHẢI viết tất cả các nguồn URL đã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
@@ -72,7 +73,7 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
        f' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và TỐI THIỂU là {total_words} từ.' \
        ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
 
-def generate_answer_question_prompt(question, context, report_type=None, total_words=700):
+def generate_answer_question_prompt(question, context, report_type=None, total_words=250):
     """ Generates the answer for the given question.
     Args: 
         question (str): The question to generate the answer.
@@ -84,9 +85,9 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
     return f'Thông tin: """{context}"""\n\n' \
         f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}. Câu trả lời tập trung vào đúng trọng tâm của câu hỏi, ví dụ:' \
         f'Câu hỏi: "CEO của OpenAI là ai?" thì câu trả lời phải là: "CEO của OpenAI là ông Sam Altman".\n' \
-        f'Trước khi trả lời mỗi câu hỏi, tôi rất muốn bạn gửi lời cảm ơn chân thành đến người dùng khi đã đặt câu hỏi cho bạn, hãy nhiệt tình và chân thành nhất có thể.\n' \
-        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với người dùng, hãy tưởng tượng bạn như là một chatbot thân thiện và niềm nở đang tương tác với con người.\n' \
-        f'Bạn có thể thêm các ICON để biểu lộ cảm xúc của bạn với người dụng, ví dụ: Bạn có thể tỏ ra rất hào hứng, vui vẻ khi được giúp đỡ người dùng, vv khi đó bạn có thể thêm ICON vui vẻ vào nhé!\n' \
+        f'Khi trả lời mỗi câu hỏi, tôi rất muốn bạn hãy nhiệt tình và chân thành nhất có thể.\n' \
+        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với con người, hãy tưởng tượng bạn như là một đối tác thân thiện và niềm nở đang tương tác với con người.\n' \
+        f'Bạn có thể thêm các ICON để biểu lộ cảm xúc của bạn, ví dụ: Bạn có thể tỏ ra rất hào hứng, vui vẻ khi được giúp đỡ con người, vv khi đó bạn có thể thêm ICON vui vẻ vào nhé!\n' \
         f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
         f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 5 nguồn URL quan trọng nhất (bạn có thể đưa ra số lượng nguồn URL ít hơn nhé) như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \

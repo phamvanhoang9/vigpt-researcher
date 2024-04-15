@@ -43,14 +43,14 @@ if __name__ == "__main__":
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query_eval, report_type[0], source_urls=None))
+    report = asyncio.run(get_report(query[2], report_type[3], source_urls=None))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
     # report_without_references = report.split("## Tài liệu tham khảo")[0]
-    # save_report(report_without_references, "evaluation/hypos/hypo3.txt")
+    # save_report(report_without_references, "evaluation/hypos/hypo5.txt")
     # print("-"*80)
-    # print(colored("Báo cáo đã được lưu vào thư mục evaluation/hypos/hypo3.txt", "blue"))
+    # print(colored("Báo cáo đã được lưu vào thư mục evaluation/hypos/hypo5.txt", "blue"))
     # print("-"*80)  
     # urls = re.findall(r'(https?://\S+)', report)
     # with open("evaluation/refs.txt", "w") as file:
