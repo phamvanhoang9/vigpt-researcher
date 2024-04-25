@@ -88,4 +88,5 @@ def scrape_text_with_selenium(selenium_web_browser: str, user_agent: str, url: s
         "firefox": FirefoxOptions,
     }
     
+    options = options_available[selenium_web_browser]()
     
