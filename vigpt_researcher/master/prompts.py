@@ -99,7 +99,7 @@ def get_report_by_type(report_type):
         'báo cáo': generate_report_prompt,
         'nguồn tham khảo': generate_resource_report_prompt,
         'khung báo cáo': generate_outline_report_prompt,
-        'câu trả lời': generate_answer_question_prompt,
+        'câu trả lời ngắn gọn': generate_answer_question_prompt,
         'custom_report': generate_custom_report_prompt
     }
     
