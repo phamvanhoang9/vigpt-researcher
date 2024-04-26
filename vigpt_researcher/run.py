@@ -20,30 +20,18 @@ def save_report(report, file_path):
 
 if __name__ == "__main__":
     
-    query = ["Cơ hội việc làm cho sinh viên ngành Điện tử - Viễn thông của Đại học Bách khoa Hà Nội sau khi tốt nghiệp",
-             "Cách ôn luyện cho kỳ thi tư duy ở Đại học Bách Khoa Hà Nội",
-             "Trình bày cơ chế hoạt động của mô hình GPT-4",
-             "CEO Sam Altman đã có những cống hiến gì cho OpenAI?",
-             "Tôi có nên đầu tư bất động sản ở Việt Nam khi đang là sinh viên không?",
-             "Bảng xếp hạng 10 tỷ phú giàu nhất thế giới ở thời điểm hiện tại",
-             "Cuộc đời của Steve Jobs như thế nào?",
-             "Thời tiết ở Hà Nội trong vài ngày tới",
-             "Bạn có thể cho tôi một đoạn thơ ngắn để tỏ tình crush được không?",
-             "Cách viết một bài báo khoa học chuẩn IEEE",
-             "Việc dành học bổng ở Đại học Bách Khoa Hà Nội có khó không?",
-             "Cách để trở thành một sinh viên xuất sắc tại Đại học Bách Khoa Hà Nội",
-             "Bạn cho tôi biết thông tin về ngành Điện tử - Viễn thông",
-             "Thiết kế vi mạch"
+    query = [ "Thời tiết ở Hà Nội trong 3 ngày tới như thế nào?",
+             "Sự phát triển của chíp bán dẫn ở Việt Nam như thế nào?"
             ]
     
     query_eval = "Tổng quan về ngành Điện tử - Viễn thông của Đại học Bách Khoa Hà Nội"
     source_urls = set()
     source_urls = source_urls.add("https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/dien-tu-va-vien-thong")
     
-    report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời"]
+    report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời ngắn gọn"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query[2], report_type[3], source_urls=None))
+    report = asyncio.run(get_report(query[0], report_type[3], source_urls=None))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
