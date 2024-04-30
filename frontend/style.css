@@ -1,0 +1,137 @@
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%; /* start from the left side and be vertically centered */
+    }
+    50% {
+        background-position: 100% 50%; /* halfway through the animation, the background image will be fully shifted to the right */
+    }
+    100% {
+        background-position: 0% 50%; /* it resets the background position to the same as the start, 0% horizontally and 50% vertically */
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Montserrat is default, sans-serif font is a generic */
+    color: #fff;
+    line-height: 1.6; /* the vertical space between lines of text */
+    background-size: 200% 200%; /* the background image will cover the element and repeat itself twice both horizontally and vertically */
+    background-image: linear-gradient(45deg, #151A2D, #2D284D, #151A2D); /* a diagonal gradient from dark blue to dark purple and then back to dark blue */
+    animation: gradientBG 10s ease infinite; 
+}
+
+.landing {
+    display: flex; /* control the layout and alignment of its children */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ensures that the element will take up the entire height of the viewport, making it cover the entire screen vertically */
+    text-align: center; /* affects the alignment of inline or inline-block level elements and text inside the container */
+}
+
+.landing h1 {
+    font-size: 3.5rem; /* relative to the font size of the root element */
+    font-weight: 700; /* 700 typically represents a bold font */
+    margin-bottom: 2rem; /* this creates space between the `h1` element and any content below it, helping with visual separation */
+}
+
+.landing p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 500px; /* this ensures that the paragraphs don't become too wide */
+    margin: auto; /* auto centering the paragraphs */
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] */
+    transition: all .3s ease-in-out; /* transition: [property] [duration] [timing-function] [delay] */
+    margin-bottom: 180px;
+}
+
+.container:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+input, select, #output, #reportContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+input:hover, input:focus, select:hover, select:focus {
+    background-color: #dfe4ea;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #0062cc, #007bff);
+    border: none;
+    transition: all .3s ease-in-out;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #6c757d, #6c757d);
+    border: none;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.8; /* button will become slightly transparent when hovered */
+    transform: scale(1.1); /* the button will become slightly larger when hovered over */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.agent_question {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    position: fixed; /* The property positions will remain fixed its position even when the user scrolls the page */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right, #151A2D, #111827);
+    color: white; /* set text color */
+    text-align: center;
+    padding: 10px 0; /* this adds padding of 10 pixeles to the top and bottom */
+}
+
+.margin-div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.agent_response {
+    background-color: #747d8c;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#output {
+    height: 300px;
+    overflow: auto; /* the browser will automatically add a scrollbar to the element if its content exceeds its specified height */
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#reportContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+    padding: 10px;
+    border-radius: 12px;
+}
