@@ -9,7 +9,7 @@ def generate_search_queries_prompt(question, max_iterations=3):
     """
     
     return f'Viết {max_iterations} truy vấn tìm kiếm trên Google để tìm thông tin một cách khách quan từ câu hỏi hoặc nội dung sau: "{question}"' \
-           f'Sử dụng ngày hiện tại nếu cần: {datetime.now().strftime("%B %d, %Y")}.\n' \
+           f'Sử dụng ngày hiện tại nếu cần: {datetime.now().strftime("%m/%d/%Y")}.\n' \
            f'Bạn phải trả lời bằng một danh sách chuỗi theo định dạng sau: ["truy vấn 1", "truy vấn 2", "truy vấn 3"].'
 
 def generate_report_prompt(question, context, report_format="apa", total_words=1000):
@@ -29,7 +29,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
            "Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
             f"Hãy sử dụng một dạng tone trung lập và không thiên vị. \n" \
             "Bạn PHẢI xác định ý kiến cụ thể và hợp lý của riêng mình dựa trên thông tin đã cho. Tránh rơi vào các kết luận tổng quát và không có ý nghĩa.\n" \
-           f"Bạn PHẢI viết tất cả các địa chỉ URL nguồn đã sử dụng ở cuối báo cáo như tài liệu tham khảo và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
+           f"Bạn PHẢI viết tất cả nguồn URLs đã sử dụng ở cuối báo cáo như là danh sách các tài liệu tham khảo được định dạng [website](url), và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
             "Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)"\
             """ 
             Ngoài ra, bạn PHẢI bao gồm các hyperlinks liên kết tới URLs có liên quan bất cứ khi nào chúng được đề cập trong báo cáo:
