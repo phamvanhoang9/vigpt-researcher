@@ -61,7 +61,8 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp Markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
         f'Báo cáo phải có chiều dài TỐI THIỂU là {total_words} từ.\n' \
-        'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan.'
+        'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan. \n' \
+        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)'\
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
     return f'"{context}"\n\n{query_prompt}'
@@ -99,8 +100,9 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
         f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, không dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
         f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 5 nguồn URL quan trọng nhất (bạn có thể đưa ra số lượng nguồn URL ít hơn nhé) như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
+        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)'\
         f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \
-        f"Cho rằng ngày hiện tại là {datetime.now().strftime('%B %d, %Y')}"
+        f"Cho rằng ngày hiện tại là {datetime.now().strftime('%m/%d/%Y')}"
         
 def get_report_by_type(report_type):
     report_type_mapping = {
