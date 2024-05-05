@@ -12,7 +12,7 @@ const VIGPTResearcher = (() => {
       document.getElementById("reportContainer").innerHTML = "";
       updateState("in_progress")
   
-      addAgentResponse({ output: "🤔 Đang suy nghĩ về yêu cầu nghiên cứu cho nhiệm vụ ..." });
+      addAgentResponse({ output: "🤔 Đang suy nghĩ về yêu cầu nghiên cứu cho nhiệm vụ..." });
   
       listenToSockEvents();
     };
@@ -91,15 +91,15 @@ const VIGPTResearcher = (() => {
       var status = "";
       switch (state) {
         case "in_progress":
-          status = "Research in progress..."
+          status = "Đang nghiên cứu..."
           setReportActionsStatus("disabled");
           break;
         case "finished":
-          status = "Research finished!"
+          status = "Nghiên cứu hoàn thành!"
           setReportActionsStatus("enabled");
           break;
         case "error":
-          status = "Research failed!"
+          status = "Nghiên cứu thất bại!"
           setReportActionsStatus("disabled");
           break;
         case "initial":
