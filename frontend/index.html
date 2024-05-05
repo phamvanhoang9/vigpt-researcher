@@ -1,16 +1,16 @@
-<!DOCTYPE html> <!-- HTML5 -->
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <title>VIGPT</title>
     <meta name="description" content="A research assistant powered by GPT-4">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./static/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!--Change the font family here, 400(normal), 700(bold)-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/site/styles.css"> <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/site/styles.css"/>
     <style>
         .avatar {
             width: 60px;
@@ -43,34 +43,38 @@
 <section class="landing">
     <div class="max-w-5xl mx-auto text-center">
         <h1 class="text-4xl font-extrabold mx-auto lg:text-7xl">
-            VIGPT <br>
-            <span 
-                    style="background-image:linear-gradient(to right, #9867F0, #ED4E50); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    Say Goodbye to ChatGPT</span>
+            Say Goodbye<br>
+            <span
+                    style="background-image:linear-gradient(to right, #9867F0, #ED4E50); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Hàng giờ
+                    nghiên cứu</span>
         </h1>
-        <p class="max-w-5xl mx-auto text-gray-600 mt-8" style="font-size:20px">
-            VIGPT - Trợ lý nghiên cứu đích thực của bạn. Hãy thử VIGPT ngay hôm nay! 
+        <p class="max-w-5xl mx-auto text-gray-600 mt-8" style="font-size:19px">
+            Say Hello VIGPT, người bạn AI đích thực của bạn để có được những hiểu biết nhanh chóng
+            và nghiên cứu toàn diện. VIGPT đảm nhận mọi việc từ thu thập nguồn chính xác đến sắp xếp
+            kết quả nghiên cứu - tất cả trong một nền tảng để giúp quá trình nghiên cứu của bạn trở nên dễ dàng hơn.
         </p>
-        <a href="#form" class="btn btn-primary">Bắt Đầu</a>
+        <a href="#form" class="btn btn-primary">Bắt đầu</a>
     </div>
 </section>
 
 <main class="container" id="form">
-    <div class="agent-item"><img src="/static/defaultAgentAvartar.JPG" class="avatar" alt="Auto Agent"></div>
+    <div class="agent-item"><img src="/static/defaultAgentAvatar.JPG" class="avatar"
+                                                alt="Auto Agent"></div>
     <form method="POST" class="mt-3" onsubmit="VIGPTResearcher.startResearch(); return false;">
         <div class="form-group">
-            <label for="task" class="agent-question">Bạn muốn tôi tìm kiếm thông tin gì tiếp theo?</label>
+            <label for="task" class="agent-question">Bạn muốn nghiên cứu thông tin gì tiếp theo?</label>
             <input type="text" id="task" name="task" class="form-control" required>
             <input type="radio" name="agent" id="autoAgent" value="Auto Agent" checked hidden>
         </div>
         <div class="form-group">
             <div class="row">
 
+
             </div>
             <button type="button" id="btnShowAuto" class="btn btn-secondary mt-3 btn-show">Auto Agent</button>
         </div>
         <div class="form-group">
-            <label for="report_type" class="agent-question">Loại yêu cầu bạn mong muốn là gì?</label>
+            <label for="report_type" class="agent-question">Hãy lựa chọn yêu cầu bạn muốn!</label>
             <select name="report_type" class="form-control" required>
                 <option value="báo cáo">Viết báo cáo</option>
                 <option value="nguồn tham khảo">Phân tích nguồn tham khảo</option>
@@ -78,12 +82,13 @@
                 <option value="câu trả lời ngắn gọn">Viết câu trả lời ngắn gọn</option>
             </select>
         </div>
-        <input type="submit" value="Tìm kiếm" class="btn btn-primary button-padding">
+        <input type="submit" value="Research" class="btn btn-primary button-padding">
     </form>
 
     <div class="margin-div">
-        <h2>Phân tích yêu cầu</h2>
-        <p class="mt-2 text-left" style="font-size: 0.8rem;">Những thông tin quan trọng và liên quan đến yêu cầu sẽ được tạo ra dưới đây!</p>
+        <h2>Agent</h2>
+        <p class="mt-2 text-left" style="font-size: 0.8rem;">Một Agent được thiết kế riêng cho nhiệm vụ của bạn
+                        sẽ được tạo ra để cung cấp kết quả nghiên cứu chính xác và phù hợp nhất.</p>
         <div id="output"></div>
     </div>
     <div class="margin-div">
@@ -98,17 +103,27 @@
 </main>
 
 <footer>
-    <p>VIGPT &copy; 2024 | By Steve Hoang - HUST | <a target="_blank" href="https://github.com/phamvanhoang9/vigpt-researcher">GitHub Page</a></p>
+    <p>VIGPT Researcher &copy; 2024 | By Steve Hoang - HUST | <a target="_blank" href="https://github.com/phamvanhoang9/vigpt-researcher">GitHub</a></p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script> <!-- Markdown to HTML -->
-<script src="/site/scripts.js"></script> <!-- Custom JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script src="/site/scripts.js"></script>
 <script>
+    // const btnChoose = document.getElementById('btnChoose');
     const btnShowAuto = document.getElementById('btnShowAuto');
     const autoAgentDiv = document.getElementById('autoAgentDiv');
     const agentChoices = document.getElementsByClassName('agent-choices');
 
-    btnShowAuto.addEventListener('click', function() {
+    /**
+    btnChoose.addEventListener('click', function () {
+        btnShowAuto.style.display = 'inline-block';
+        btnChoose.style.display = 'none';
+        autoAgentDiv.style.display = 'none';
+        agentChoices[0].style.display = 'flex';
+    });
+    **/
+
+    btnShowAuto.addEventListener('click', function () {
         btnShowAuto.style.display = 'none';
         btnChoose.style.display = 'inline-block';
         autoAgentDiv.style.display = 'flex';
