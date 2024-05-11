@@ -8,11 +8,37 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
       
 2. Maybe you also get this error: *error: subprocess-existed-with-error/metadata-generation-failed*:
     - **Solution**: Let's try these steps. I'm not sure that they will also solve your issue!
-      
-       ```
+  
+   ```
        python -m pip install -U pip
        python -m pip install -U setuptools wheel
        python -m pip install [package] --no-build-isolation
-       ```
+   ```
+
+3. The problem relates to the CUDA version (*These instructions worked with Ubuntu:*):
+   * Update:
+   ```
+       sudo apt update
+   ```
+   * Install CUDA:
+   ```
+      sudo apt install [cuda version you want]
+   ```
+   * Find where CUDA is installed:
+   ```
+       ls /usr/local/
+   ```
+   * Update environment variables:
+   ```
+       export PATH=/usr/local/cuda-version/bin${PATH:+:${PATH}}
+       export LD_LIBRARY_PATH=/usr/local/cuda-version/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+       echo 'export PATH=/usr/local/cuda-version/bin${PATH:+:${PATH}}' >> ~/.bashrc
+       echo 'export LD_LIBRARY_PATH=/usr/local/cuda-version/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+   ```
+   * Now, let's check CUDA:
+   ```
+       ncvv -V
+   ```
+   It will show CUDA as the installed version.
+   
 #### Importance: You should follow the instructions on your work, such as the terminal before seeking the solutions outside if you do not understand your problem!
-      
