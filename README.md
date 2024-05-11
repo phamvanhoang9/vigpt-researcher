@@ -5,7 +5,11 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
 ## Issues
 1. *OSError: cannot load library 'gobject-2.0-0': gobject-2.0-0: cannot open shared object file*:
     - **Solution**: `conda install -c anaconda pango` prior to `pip install weasyprint` works, but that's unfortunate that there is no pure pip solution where all project dependencies can be pip installed from a requirements file.
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 718dcc3316937b6432a34b9ad99357db064d0262
 2. Maybe you also get this error: *error: subprocess-existed-with-error/metadata-generation-failed*:
     - **Solution**: Let's try these steps. I'm not sure that they will also solve your issue!
   
@@ -35,7 +39,11 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
        echo 'export PATH=/usr/local/cuda-version/bin${PATH:+:${PATH}}' >> ~/.bashrc
        echo 'export LD_LIBRARY_PATH=/usr/local/cuda-version/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
    ```
+<<<<<<< HEAD
    * Now, let's check CUDA version:
+=======
+   * Now, let's check CUDA:
+>>>>>>> 718dcc3316937b6432a34b9ad99357db064d0262
    ```
        ncvv -V
    ```
