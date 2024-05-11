@@ -35,7 +35,7 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
        echo 'export PATH=/usr/local/cuda-version/bin${PATH:+:${PATH}}' >> ~/.bashrc
        echo 'export LD_LIBRARY_PATH=/usr/local/cuda-version/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
    ```
-   * Now, let's check CUDA:
+   * Now, let's check CUDA version:
    ```
        ncvv -V
    ```
