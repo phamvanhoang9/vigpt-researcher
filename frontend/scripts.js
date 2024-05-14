@@ -19,9 +19,9 @@ const VIGPTResearcher = (() => {
   
     const listenToSockEvents = () => {
       const { protocol, host, pathname } = window.location;
-      const ws_uri = `${protocol === 'https:' ? 'wss:' : 'ws:'}//${host}${pathname}ws`;
-      const converter = new showdown.Converter();
-      const socket = new WebSocket(ws_uri);
+      const ws_uri = `${protocol === 'https:' ? 'wss:' : 'ws:'}//${host}${pathname}ws`; // wss:// for encrypted connections, ws:// for unencripted connections
+      const converter = new showdown.Converter(); // convert Markdown to HTML
+      const socket = new WebSocket(ws_uri); // enables two-way communication between a client and a server
   
       socket.onmessage = (event) => {
         const data = JSON.parse(event.data);
