@@ -1,7 +1,11 @@
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+# FastAPI is designed to be easy to use while ensuring high performance. It's particularly suited for building
+# APIs that need to be fast and for developers who want to work with the lastest asynchronous Python features.
 from pydantic import BaseModel
+# pydantic is a common import in web applications, especially those using FastAPI for building APIs,
+# as FastAPI heavily relies on `pydantic` for request and response validation.
 import json
 import os
 from vigpt_researcher.utils.websocket_manager import WebSocketManager

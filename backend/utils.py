@@ -1,7 +1,11 @@
-import aiofiles
-import urllib
+import aiofiles 
+# aiofiles allows for file reading and writing operations to be performed without blocking the asynchronous event loop, while is particularly useful in asynchronous programming paradigms.
+import urllib 
+# urllib allows us to interact with and manipulate URLs, perform HTTP requests, handle errors, and parse data from the internet. 
 import uuid
+# uuid is used for identifying objects, ensuring uniqueness across different systems, sessions, or for any feature that requires unique identifiers.
 from md2pdf.core import md2pdf
+
 
 async def write_to_file(filename: str, text: str) -> None:
     """Asynchronously write text to a file in UTF-8 encoding.
