@@ -29,15 +29,14 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
            "Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
             f"Hãy sử dụng một dạng tone trung lập và không thiên vị. \n" \
             "Bạn PHẢI xác định ý kiến cụ thể và hợp lý của riêng mình dựa trên thông tin đã cho. Tránh rơi vào các kết luận tổng quát và không có ý nghĩa.\n" \
-           f"Bạn PHẢI viết tất cả nguồn URLs đã sử dụng ở cuối báo cáo như là danh sách các tài liệu tham khảo được định dạng [website](url), và đảm bảo không thêm nguồn trùng lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
-            "Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)"\
+           f"Bạn PHẢI viết tất cả các nguồn URL đã sử dụng ở cuối báo cáo như là danh sách các tài liệu tham khảo được định dạng [url website](url), đảm bảo không thêm nguồn trùng lặp và chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
             """ 
-            Ngoài ra, bạn PHẢI bao gồm các hyperlinks liên kết tới URLs có liên quan bất cứ khi nào chúng được đề cập trong báo cáo:
+            Ngoài ra, bạn PHẢI bao gồm các hyperlink liên kết tới URL có liên quan bất cứ khi nào chúng được đề cập trong báo cáo:
             
             Ví dụ:
                 # Tiêu đề báo cáo
                 
-                Đây là một đoạn văn mẫu. ([url website](url))
+                Đây là một đoạn văn mẫu ([url website](url)).
             """\
            f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
             f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trực tiếp trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất và trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà đề cập đến chúng.\n"\
@@ -58,11 +57,11 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         f'câu hỏi hoặc chủ đề sau: "{question}". Báo cáo nên cung cấp một phân tích chi tiết về mỗi nguồn tài liệu được đề xuất, ' \
         'giải thích cách mỗi nguồn có thể đóng góp vào việc tìm câu trả lời cho câu hỏi nghiên cứu.\n' \
         'Tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
-        'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp Markdown.\n' \
+        'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
         f'Báo cáo phải có chiều dài TỐI THIỂU là {total_words} từ.\n' \
         'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan. \n' \
-        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)'\
+        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
     return f'"{context}"\n\n{query_prompt}'
@@ -76,11 +75,27 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
         str: The outline report prompt for the given question and research summary
     """
     
-    return f'"""{context}""" Dựa trên thông tin đã cung cấp, hãy tạo ra một bản phác thảo cho một báo cáo nghiên cứu bằng cú pháp Markdown' \
-       f' cho câu hỏi hoặc chủ đề sau: "{question}". Bản phác thảo nên cung cấp một khung cấu trúc tốt' \
-       ' cho báo cáo nghiên cứu, bao gồm các phần chính, phần con và các điểm chính cần được bao quát.' \
-       f' Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc và TỐI THIỂU là {total_words} từ.' \
-       ' Sử dụng cú pháp Markdown phù hợp để định dạng phác thảo và đảm bảo tính đọc dễ hiểu.'
+    return f'Thông tin: """{context}"""\n\n' \
+        f'Dựa trên thông tin đã cung cấp, hãy sử dụng cú pháp markdown để tạo ra một bản phác thảo cho một báo cáo nghiên cứu cho câu hỏi hoặc nội dung sau: "{question}". ' \
+        f'Bản phác thảo này như là một dàn ý cho báo cáo nghiên cứu, cung cấp cho con người đọc một cái nhìn tổng quan về cấu trúc và nội dung của báo cáo.' \
+        f'Bản phác thảo nên cung cấp một khung cấu trúc tốt cho báo cáo nghiên cứu, bao gồm các phần chính, phần con và các điểm chính cần được bao quát.' \
+        """ 
+        Ví dụ:
+            # Mục lục
+            
+            ## 1. Mục 1
+            
+            ### 1.1. Mục 1.1
+            
+            ### 1.2. Mục 1.2
+            
+            ## 2. Mục 2
+            
+        """ \
+        f'Báo cáo nên phân chia rạch ròi giữa các phần chính và phần con, giữa phần Mục lục với phần triển khai của Mục lục giúp người đọc dễ dàng theo dõi và hiểu nội dung báo cáo.' \
+        f'Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc, đảm bảo tính dễ đọc dễ hiểu và TỐI THIỂU là {total_words} từ.' \
+        f'Danh sách tài liệu tham khảo nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.' \
+        f'Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. ' \
 
 def generate_answer_question_prompt(question, context, report_type=None, total_words=250):
     """ Generates the answer for the given question.
@@ -100,7 +115,7 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
         f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, không dài dòng và TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
         f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 5 nguồn URL quan trọng nhất (bạn có thể đưa ra số lượng nguồn URL ít hơn nhé) như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
-        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url)'\
+        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
         f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \
         f"Cho rằng ngày hiện tại là {datetime.now().strftime('%m/%d/%Y')}"
         
