@@ -6,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 # pydantic is a common import in web applications, especially those using FastAPI for building APIs,
 # as FastAPI heavily relies on `pydantic` for request and response validation.
+from contextlib import asynccontextmanager
 import json
 import os
 from vigpt_researcher.utils.websocket_manager import WebSocketManager
@@ -29,11 +30,26 @@ manager = WebSocketManager()
 
 
 # Dynamic directory for outputs once first research is run
-@app.on_event("startup")
-def startup_event():
+# @app.on_event("startup")
+# def startup_event():
+#     if not os.path.isdir("outputs"):
+#         os.makedirs("outputs"
+#     app.mount("/outputs", StaticFiles(directory="outputs"), name="outputs")
+
+# Using lifespan events instead of on_event decorator because on_event is deprecated
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     if not os.path.isdir("outputs"):
         os.makedirs("outputs")
-    app.mount("/outputs", StaticFiles(directory="outputs"), name="outputs")
+    try:
+        yield
+    finally:
+        # Clean up code here, if needed
+        pass
+
+app.router.lifespan_context = lifespan 
+app.mount("/outputs", StaticFiles(directory="outputs"), name="outputs")
+
 
 @app.get("/")
 async def read_root(request: Request):
