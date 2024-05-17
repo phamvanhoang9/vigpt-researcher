@@ -36,7 +36,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
             Ví dụ:
                 # Tiêu đề báo cáo
                 
-                Đây là một đoạn văn mẫu ([url website](url)).
+                Đây là một đoạn văn mẫu. ([url website](url))
             """\
            f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
             f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trực tiếp trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất và trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà đề cập đến chúng.\n"\
