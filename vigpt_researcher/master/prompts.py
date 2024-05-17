@@ -12,7 +12,7 @@ def generate_search_queries_prompt(question, max_iterations=3):
            f'Sử dụng ngày hiện tại nếu cần: {datetime.now().strftime("%m/%d/%Y")}.\n' \
            f'Bạn phải trả lời bằng một danh sách chuỗi theo định dạng sau: ["truy vấn 1", "truy vấn 2", "truy vấn 3"].'
 
-def generate_report_prompt(question, context, report_format="apa", total_words=1200):
+def generate_report_prompt(question, context, report_format="apa", total_words=1000):
     """ Generates the report prompt for the given question and research summary.
     Args: 
         question (str): The question to generate the report prompt for
