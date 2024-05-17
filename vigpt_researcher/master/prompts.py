@@ -22,26 +22,27 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
     """
     
     return f'Thông tin: """{context}"""\n\n' \
-           f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}" trong một báo cáo chi tiết --' \
-           " Báo cáo nên tập trung vào việc trả lời cho câu hỏi, phải có cấu trúc tốt, cung cấp thông tin," \
-           f" sâu sắc và toàn diện, với các sự thật và dữ liệu nếu có sẵn và TỐI THIỂU {total_words} từ.\n" \
-           "Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
-           "Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
-            f"Hãy sử dụng một dạng tone trung lập và không thiên vị. \n" \
-            "Bạn PHẢI xác định ý kiến cụ thể và hợp lý của riêng mình dựa trên thông tin đã cho. Tránh rơi vào các kết luận tổng quát và không có ý nghĩa.\n" \
-           f"Bạn PHẢI viết tất cả các nguồn URL đã sử dụng ở cuối báo cáo như là danh sách các tài liệu tham khảo được định dạng [url website](url), đảm bảo không thêm nguồn trùng lặp và chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
-            """ 
-            Ngoài ra, bạn PHẢI bao gồm các hyperlink liên kết tới URL có liên quan bất cứ khi nào chúng được đề cập trong báo cáo:
+        f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}" trong một báo cáo chi tiết --' \
+        " Báo cáo nên tập trung vào việc trả lời cho câu hỏi, phải có cấu trúc tốt, cung cấp thông tin," \
+        f" sâu sắc và toàn diện, với các sự thật và dữ liệu nếu có sẵn và TỐI THIỂU {total_words} từ.\n" \
+        "Bạn nên cố gắng viết báo cáo càng dài càng tốt bằng tất cả thông tin liên quan và cần thiết được cung cấp.\n" \
+        "Bạn phải viết báo cáo bằng cú pháp markdown.\n" \
+        f"Hãy sử dụng một dạng tone trung lập và không thiên vị. \n" \
+        "Bạn PHẢI xác định ý kiến cụ thể và hợp lý của riêng mình dựa trên thông tin đã cho. Tránh rơi vào các kết luận tổng quát và không có ý nghĩa.\n" \
+        f"Bạn PHẢI viết tất cả các nguồn URL đã sử dụng ở cuối báo cáo như là danh sách các tài liệu tham khảo được định dạng [url website](url), trong đó [url website] là tiêu đề hoặc nội dung của url.\n" \
+        f"Tài liệu tham khảo đưa ra đảm bảo không thêm nguồn trùng lặp và chỉ thêm một tham chiếu cho mỗi nguồn.\n" \
+        """ 
+        Ngoài ra, bạn PHẢI bao gồm các hyperlink liên kết tới URL có liên quan bất cứ khi nào chúng được đề cập trong báo cáo:
+        
+        Ví dụ:
+            # Tiêu đề báo cáo
             
-            Ví dụ:
-                # Tiêu đề báo cáo
-                
-                Đây là một đoạn văn mẫu. ([url website](url))
-            """\
-           f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
-            f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trực tiếp trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất và trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà đề cập đến chúng.\n"\
-            f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
-            f"Cho rằng ngày hiện tại là {datetime.now().strftime('%m/%d/%Y')}"
+            Đây là một đoạn văn mẫu. ([url website](url))
+        """\
+        f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
+        f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trực tiếp trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất và trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà đề cập đến chúng.\n"\
+        f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
+        f"Cho rằng ngày hiện tại là {datetime.now().strftime('%m/%d/%Y')}"
 
 def generate_resource_report_prompt(question, context, report_format="apa", total_words=700):
     """Generates the resource report prompt for the given question and research summary.
@@ -61,7 +62,7 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
         f'Báo cáo phải có chiều dài TỐI THIỂU là {total_words} từ.\n' \
         'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan. \n' \
-        'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
+        'Mỗi nguồn nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
 
 def generate_custom_report_prompt(query_prompt, context, report_format="apa", total_words=1000):
     return f'"{context}"\n\n{query_prompt}'
