@@ -22,3 +22,5 @@ PyMuPDF
 requests
 jinja2
 aiofiles
+langchain_community
+langchain-openai
