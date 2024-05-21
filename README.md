@@ -41,4 +41,10 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
    ```
    It will show CUDA as the installed version.
    
+4. duckduckgo rate limit error:
+    * Let's update to the lastest version:
+    ```
+        python -m pip install --upgrade --quiet duckduckgo-search
+    ```
+   
 #### Importance: You should follow the instructions on your work, such as the terminal before seeking the solutions outside if you do not understand your problem!
