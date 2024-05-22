@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Voice To Text</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <textarea id="text" rows="8" cols="100"></textarea> <br>
+    <div class="mic-container">
+        <button id="mic"></button>
+        <p id="status">Start recording</p>
+        <button onclick="readText()">Read Text</button>
+    </div>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=MMzRi9pQ"></script>
+
+    <script type="text/javascript">
+        var micButton = document.getElementById('mic');
+        var textElement = document.getElementById('text');
+        var statusElement = document.getElementById('status');
+
+        var recognition = new webkitSpeechRecognition();
+        
+        recognition.lang = 'vi-VN';  // Set to Vietnamese language
+        recognition.interimResults = true;
+        var final_transcript = '';  // Initialize final transcript
+        var isRecording = false;
+
+        micButton.addEventListener('click', () => {
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                final_transcript = '';  // Reset the final transcript
+                textElement.value = '';  // Clear the textarea
+                recognition.start();
+            }
+        });
+
+        recognition.addEventListener('start', () => {
+            isRecording = true;
+            micButton.classList.add('recording');
+            statusElement.textContent = 'Stop recording';
+        });
+
+        recognition.addEventListener('end', () => {
+            isRecording = false;
+            micButton.classList.remove('recording');
+            statusElement.textContent = 'Start recording';
+        });
+
+        recognition.addEventListener('result', (event) => {
+            var interim_transcript = '';
+            
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    final_transcript += event.results[i][0].transcript;
+                } else {
+                    interim_transcript += event.results[i][0].transcript;
+                }
+            }
+
+            textElement.value = final_transcript + interim_transcript;
+        });
+
+        function readText() {
+            var textToRead = document.getElementById("text").value;
+            
+            // Using responsiveVoice.js library for text-to-speech
+            responsiveVoice.speak(textToRead, "Vietnamese Female", {rate: 1.0}); // Adjust rate as needed
+        }
+        
+        function pauseSpeech() {
+            responsiveVoice.pause();
+        }
+    
+        function resumeSpeech() {
+            responsiveVoice.resume();
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    margin-bottom: 20px;
+}
+
+.mic-container {
+    position: relative;
+    display: inline-block;
+}
+
+#mic {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background: url('mic-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    outline: none;
+}
+
+#mic.recording {
+    background: url('mic-recording-icon.png') no-repeat center center;
+    background-size: contain;
+}
+
+#status {
+    position: absolute;
+    bottom: -50px;
+    left: 25px;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.mic-container:hover #status {
+    opacity: 1;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
