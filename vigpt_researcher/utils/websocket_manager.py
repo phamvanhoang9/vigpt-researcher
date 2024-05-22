@@ -66,6 +66,6 @@ async def run_agent(task, report_type, websocket):
     report = await researcher.run()
     # Measure time
     end_time = datetime.datetime.now()
-    await websocket.send_json({"type": "logs", "output": f"\nTổng thời gian chạy: {end_time - start_time}\n"})
+    await websocket.send_json({"type": "logs", "output": f"\nTổng thời gian xử lý: {end_time - start_time}\n"})
     
     return report 
