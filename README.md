@@ -12,6 +12,18 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
     ```
         pip install -r requirements.txt
     ```
+
+## Run app
+1. Run the app with the following command:
+```
+    python -m uvicorn app:main --reload
+```
+2. Or Run with docker-compose:
+```
+    docker-compose up --build
+```
+3. Open your browser and go to `http://localhost:8000` to see the app.
+
 ## Issues
 1. *OSError: cannot load library 'gobject-2.0-0': gobject-2.0-0: cannot open shared object file*:
     - **Solution**: `conda install -c anaconda pango` prior to `pip install weasyprint` works, but that's unfortunate that there is no pure pip solution where all project dependencies can be pip installed from a requirements file.
