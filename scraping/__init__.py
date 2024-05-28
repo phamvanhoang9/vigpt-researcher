@@ -1,1 +1,1 @@
-from gpt_researcher import *
+from vigpt_researcher import *

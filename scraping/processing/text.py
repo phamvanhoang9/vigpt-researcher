@@ -7,8 +7,8 @@ from selenium.webdriver.remote.webdriver import WebDriver
 import sys 
 sys.path.append('..')
 
-from gpt_researcher.config import Config
-from gpt_researcher.utils.llm import create_chat_completion
+from vigpt_researcher.config import Config
+from vigpt_researcher.utils.llm import create_chat_completion
 import os
 from md2pdf.core import md2pdf
 

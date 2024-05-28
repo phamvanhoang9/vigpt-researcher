@@ -1,0 +1,10 @@
+version: '3.11'
+services:
+  vigpt-researcher:
+    image: stevehoang/vigpt-researcher
+    build: ./
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      TAVILY_API_KEY: ${TAVILY_API_KEY}
+    ports:
+      - 8000:8000
