@@ -3,17 +3,27 @@ import os
 
 
 class Config:
-    """Config class for VIGPT Researcher."""
+    """Config class for ViGPT Researcher."""
     
-    def __init__(self, config_file: str = None):
+    def __init__(self, config_file: str = None): 
+        # default config_file is None
         """Initialize the config class."""
         self.config_file = config_file if config_file else os.getenv('CONFIG_FILE')
-        self.retriever = os.getenv('SEARCH_RETRIEVER', "tavily")
-        self.llm_provider = os.getenv('LLM_PROVIDER', "ChatOpenAI")
-        # self.fast_llm_model = os.getenv('FAST_LLM_MODEL', "gpt-3.5-turbo-16k")
-        # self.smart_llm_model = os.getenv('SMART_LLM_MODEL', "gpt-4-1106-preview")
-        self.fast_llm_model = os.getenv('FAST_LLM_MODEL', "gpt-3.5-turbo-0125")
+        
+        # LLM Provider source: https://artificialanalysis.ai/leaderboards/providers
+        
+        self.retriever = os.getenv('SEARCH_RETRIEVER', "google")
+        self.embedding_provider = os.getenv('EMBEDDING_PROVIDER', "openai")
+        self.llm_provider = os.getenv('LLM_PROVIDER', "openai")
+        self.fast_llm_model = os.getenv('FAST_LLM_MODEL', "gpt-3.5-turbo-16k")
         self.smart_llm_model = os.getenv('SMART_LLM_MODEL', "gpt-4o")
+        
+        # self.embedding_provider = os.getenv('EMBEDDING_PROVIDER', 'huggingface')
+        # self.retriever = os.getenv('SEARCH_RETRIEVER', "google")
+        # self.llm_provider = os.getenv('LLM_PROVIDER', "google")
+        # self.fast_llm_model = os.getenv('FAST_LLM_MODEL', "gemini-1.5-flash")
+        # self.smart_llm_model = os.getenv('SMART_LLM_MODEL', "gemini-1.5-flash")
+        
         self.fast_token_limit = int(os.getenv('FAST_TOKEN_LIMIT', 2000))
         self.smart_token_limit = int(os.getenv('SMART_TOKEN_LIMIT', 4000))
         self.browse_chunk_max_length = int(os.getenv('BROWSE_CHUNK_MAX_LENGTH', 8192))
@@ -29,6 +39,8 @@ class Config:
         self.agent_role = os.getenv('AGENT_ROLE', None)
 
         self.load_config_file()
+        if not hasattr(self, "llm_kwargs"):
+            self.llm_kwargs = {}
         
     def load_config_file(self) -> None:
         """Load the config file."""
