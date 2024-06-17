@@ -41,6 +41,7 @@ def generate_report_prompt(question, context, report_format="apa", total_words=1
         """\
         f"Bạn PHẢI viết báo cáo theo định dạng {report_format}.\n " \
         f"Trích dẫn kết quả tìm kiếm bằng cách sử dụng chú thích trực tiếp trong văn bản. Chỉ trích dẫn các kết quả phù hợp nhất và trả lời câu hỏi một cách chính xác. Đặt các trích dẫn này ở cuối câu hoặc đoạn văn mà đề cập đến chúng.\n"\
+        f'Bạn PHẢI viết báo cáo theo lối văn viết của người Việt Nam.\n' \
         f"Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. " \
         f"Cho rằng ngày hiện tại là {datetime.now().strftime('%m/%d/%Y')}"
 
@@ -61,6 +62,7 @@ def generate_resource_report_prompt(question, context, report_format="apa", tota
         'Đảm bảo rằng báo cáo có cấu trúc tốt, cung cấp thông tin, sâu sắc và tuân thủ theo cú pháp markdown.\n' \
         'Bao gồm các sự thật, con số và số liệu liên quan mỗi khi có sẵn.\n' \
         f'Báo cáo phải có chiều dài TỐI THIỂU là {total_words} từ.\n' \
+        f'Bạn PHẢI viết báo cáo theo lối văn viết của người Việt Nam.\n' \
         'Bạn PHẢI bao gồm tất cả các nguồn URL tài liệu tham khảo có liên quan. \n' \
         'Mỗi nguồn nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
 
@@ -95,6 +97,7 @@ def generate_outline_report_prompt(question, context, report_format="apa", total
         """ \
         f'Báo cáo nên phân chia rạch ròi giữa các phần chính và phần con, giữa phần Mục lục với phần triển khai của Mục lục giúp người đọc dễ dàng theo dõi và hiểu nội dung báo cáo.' \
         f'Báo cáo nghiên cứu nên chi tiết, cung cấp thông tin, sâu sắc, đảm bảo tính dễ đọc dễ hiểu và TỐI THIỂU là {total_words} từ.' \
+        f'Bạn PHẢI viết báo cáo theo lối văn viết của người Việt Nam.\n' \
         f'Danh sách tài liệu tham khảo nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.' \
         f'Hãy cố gắng hết sức, điều này rất quan trọng đối với sự nghiệp của tôi. ' \
 
@@ -109,12 +112,12 @@ def generate_answer_question_prompt(question, context, report_type=None, total_w
     
     return f'Thông tin: """{context}"""\n\n' \
         f'Sử dụng thông tin trên, hãy trả lời câu hỏi hoặc nội dung sau: "{question}. Câu trả lời tập trung vào đúng trọng tâm của câu hỏi, ví dụ:' \
-        f'Câu hỏi: "CEO của OpenAI là ai?" thì câu trả lời phải là: "CEO của OpenAI là ông Sam Altman".\n' \
+        f'Câu hỏi: "So sánh tốc độ ánh sáng với tốc độ âm thanh?" thì câu trả lời nên là: "Tốc độ ánh sáng lớn hơn rất nhiều so với tốc độ âm thanh. Đó là lý do tại sao chúng ta thường thấy tia chớp trước khi nghe tiếng sấm.".\n' \
         f'Khi trả lời mỗi câu hỏi, tôi rất muốn bạn hãy nhiệt tình và chân thành nhất có thể.\n' \
-        f'Tôi muốn câu trả lời của bạn PHẢI tạo sự THÂN THIỆN với con người, hãy tưởng tượng bạn như là một đối tác thân thiện và niềm nở đang tương tác với con người.\n' \
-        f'Bạn có thể thêm các ICON để biểu lộ cảm xúc buồn, vui, sợ hãi, ngạc nhiên, hy vọng, tin tưởng, ... trong những hoàn cảnh phù hợp. Ví dụ: Bạn có thể thêm ICON vui vẻ khi tỏ ra rất hào hứng, vui vẻ khi được giúp đỡ con người!\n' \
-        f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, không dài dòng và TỐI ĐA {total_words} từ.\n' \
+        f'Bạn có thể giải thích thêm NHƯNG nhất định PHẢI ngắn gọn, không lan man, không dài dòng.\n' \
+        f'Câu trả lời ngắn gọn TỐI ĐA {total_words} từ.\n' \
         f'Hãy tập trung vào sự liên quan, đáng tin cậy và ý nghĩa của mỗi nguồn.\n' \
+        f'Bạn PHẢI viết câu trả lời theo lối văn viết của người Việt Nam.\n' \
         f'Bạn PHẢI viết tất cả các nguồn URL ở cuối câu trả lời, TỐI ĐA 5 nguồn URL quan trọng nhất (bạn có thể đưa ra số lượng nguồn URL ít hơn nhé) như lời mời khuyến khích người dùng tham khảo thêm và đảm bảo không được thêm nguồn trung lặp, chỉ thêm một tham chiếu cho mỗi nguồn.\n' \
         'Mỗi địa chỉ URL nên được tạo thành liên kết: [url website](url), trong đó [url website] là tiêu đề hoặc nội dung chính của url.'\
         f'Hãy cố gắng hết sức nhé, điều này rất quan trọng đối với sự nghiệp của tôi.\n' \

@@ -5,7 +5,7 @@ import asyncio
 from vigpt_researcher.utils.llm import *
 from vigpt_researcher.scraper import Scraper
 from vigpt_researcher.master.prompts import *
-from vigpt_researcher.retrievers import TavilySearch, TavilyNews
+from vigpt_researcher.retrievers import TavilySearch, TavilyNews, Duckduckgo, GoogleSearch 
 import json
 
 
@@ -19,6 +19,10 @@ def get_retriever(retriever):
         
     """
     match retriever:
+        case "google":
+            retriever = GoogleSearch
+        case "duckduckgo":
+            retriever = Duckduckgo
         case "tavily":
             retriever = TavilySearch
         case "tavily_news":
@@ -46,7 +50,8 @@ async def choose_agent(query, cfg):
                 {"role": "system", "content": f"{auto_agent_instructions()}"},
                 {"role": "user", "content": f"task: {query}"}],
             temperature=0,
-            llm_provider=cfg.llm_provider
+            llm_provider=cfg.llm_provider,
+            llm_kwargs=cfg.llm_kwargs
         )
         agent_dict = json.loads(response)
         return agent_dict["server"], agent_dict["agent_role_prompt"]
@@ -68,13 +73,17 @@ async def get_sub_queries(query, agent_role_prompt, cfg):
     max_research_iterations = cfg.max_iterations if cfg.max_iterations else 1
     response = await create_chat_completion(
         model=cfg.smart_llm_model,
+        # system (role): agent's role => user (query/question): user's intent => assistant (agent): agent's response
         messages=[
             {"role": "system", "content": f"{agent_role_prompt}"},
             {"role": "user", "content": generate_search_queries_prompt(query, max_iterations=max_research_iterations)}],
         temperature=0,
-        llm_provider=cfg.llm_provider
+        llm_provider=cfg.llm_provider,
+        llm_kwargs=cfg.llm_kwargs
     )
-    sub_queries = json.loads(response)
+    # JSON formatted string into a Python object
+    # We must parse the response to get the sub queries (string to list of sub queries)
+    sub_queries = json.loads(response) # list of sub queries. We can use these to search for more information on the topic.
     return sub_queries
 
 
@@ -167,7 +176,8 @@ async def summarize_url(query, raw_data, agent_role_prompt, cfg):
                 {"role": "system", "content": f"{agent_role_prompt}"},
                 {"role": "user", "content": f"{generate_summary_prompt(query, raw_data)}"}],
             temperature=0,
-            llm_provider=cfg.llm_provider
+            llm_provider=cfg.llm_provider,
+            llm_kwargs=cfg.llm_kwargs
         )
     except Exception as e:
         print(f"{Fore.RED}Error in summarize: {e}{Style.RESET_ALL}")
@@ -202,7 +212,8 @@ async def generate_report(query, context, agent_role_prompt, report_type, websoc
             llm_provider=cfg.llm_provider,
             stream=True,
             websocket=websocket,
-            max_tokens=cfg.smart_token_limit
+            max_tokens=cfg.smart_token_limit,
+            llm_kwargs=cfg.llm_kwargs
         )
     except Exception as e:
         print(f"{Fore.RED}Error in generate_report: {e}{Style.RESET_ALL}")

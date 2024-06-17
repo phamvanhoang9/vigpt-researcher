@@ -1,22 +1,17 @@
-# import sys
-# sys.path.append('..')
-
 import time 
 from vigpt_researcher.config import Config 
-# from ..config import Config
 from vigpt_researcher.master.functions import *
-# from ..master.functions import *
 from vigpt_researcher.context.compression import ContextCompressor
 from vigpt_researcher.memory import Memory 
 
 
 class VIGPTResearcher:
     """
-    VIGPT Researcher
+    ViGPT Researcher
     """
     def __init__(self, query, report_type="research_report", source_urls=None, config_path=None, websocket=None):
         """
-        Initialize the VIGPT Researcher class.
+        Initialize the ViGPT Researcher class.
         Args:
             query:
             report_type:
@@ -29,15 +24,15 @@ class VIGPTResearcher:
         self.report_type = report_type
         self.websocket = websocket
         self.cfg = Config(config_path)
-        self.retriever = get_retriever(self.cfg.retriever)
+        self.retriever = get_retriever(self.cfg.retriever) # tavily is default
         self.context = []
         self.source_urls = source_urls
-        self.memory = Memory()
+        self.memory = Memory(self.cfg.embedding_provider)
         self.visited_urls = set()
 
     async def run(self):
         """
-        Runs the VIGPT Researcher
+        Runs the ViGPT Researcher
         Returns:
             Report
         """
@@ -122,12 +117,13 @@ class VIGPTResearcher:
             Summary
         """
         # Get Urls
+        # Using tavily search as default
         retriever = self.retriever(sub_query)
         search_results = retriever.search(max_results=self.cfg.max_search_results_per_query)
         new_search_urls = await self.get_new_urls([url.get("href") for url in search_results])
 
         # Scrape Urls
-        await stream_output("logs", f"📝 Đang quét các url sau: {new_search_urls}...\n", self.websocket)
+        await stream_output("logs", f"📝 Đang quét các url sau: {new_search_urls}...\n", self.websocket) # WebSockets provide a persistent connection between a client and a server, allowing for real-time data exchange
         await stream_output("logs", f"🤔 Đang tìm kiếm thông tin liên quan...\n", self.websocket)
         scraped_content_results = scrape_urls(new_search_urls, self.cfg)
         return scraped_content_results
