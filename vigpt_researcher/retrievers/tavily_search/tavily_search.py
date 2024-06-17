@@ -40,6 +40,6 @@ class TavilySearch():
             search_response = [{"href": obj["url"], "body":obj["content"]} for obj in results.get("results", [])]
         except Exception as e:
             ddg = DDGS()
-            search_response = ddg.text(self.query, region='wt-wt', max_results=max_results)
+            search_response = ddg.text(self.query, region='wt-wt', max_results=max_results) # region='wt-wt' is for worldwide search
         
         return search_response
