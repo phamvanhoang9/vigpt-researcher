@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 
 from vigpt_researcher import VIGPTResearcher
-import asyncio 
+import asyncio # asyncio provides an easy way to handle asynchronous I/O operations in Python.
 from termcolor import colored
 import time
 
@@ -19,13 +19,10 @@ def save_report(report, file_path):
 
 if __name__ == "__main__":
     
-    query = [ "Thời tiết ở Hà Nội trong 3 ngày tới như thế nào?",
+    query = [
+            "Phân tích mô hình KANs so với mô hình MLPs trong Deep Learning",
              "Sự phát triển của chíp bán dẫn ở Việt Nam như thế nào?",
              "Lợi ích cuả việc sử dụng công nghệ AI trong giáo dục là gì?",
-             "Ông Nguyễn Xuân Phúc là chủ tịch nước Việt Nam hiện tại đúng không?",
-             "Bạn có thể cho tôi một vài câu thơ tỏ tình người yêu được không?",
-             "Lợi ích của việc ngủ đủ giấc là gì?",
-             "Top Đại học tốt nhất Việt Nam",
             ]
     
     query_eval = "Tổng quan về ngành Điện tử - Viễn thông của Đại học Bách Khoa Hà Nội"
@@ -35,7 +32,7 @@ if __name__ == "__main__":
     report_type = ["báo cáo", "nguồn tham khảo", "khung báo cáo", "câu trả lời ngắn gọn"]
     
     start_time = time.time()
-    report = asyncio.run(get_report(query[0], report_type[1], source_urls=None))
+    report = asyncio.run(get_report(query[0], report_type[0], source_urls=None))
     end_time = time.time()
     print(colored(f"\nTổng thời gian xử lý: {(end_time - start_time):.3f} giây.\n\n", "cyan"))
     
