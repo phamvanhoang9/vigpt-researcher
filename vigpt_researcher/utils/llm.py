@@ -1,16 +1,28 @@
 from __future__ import annotations
-# import sys
-# sys.path.append('..')
 
 import logging
 import json 
 from fastapi import WebSocket 
 from langchain_community.adapters import openai as lc_openai
 from colorama import Fore, Style 
-from typing import Optional 
+from typing import Optional, Any, Dict
 
 from vigpt_researcher.master.prompts import auto_agent_instructions
 
+
+def get_llm(llm_provider, **kwargs):
+    match llm_provider:
+        case "openai":
+            from ..llm_provider import OpenAIProvider
+            llm_provider = OpenAIProvider
+        case "google":
+            from ..llm_provider import GoogleProvider
+            llm_provider = GoogleProvider
+        case _:
+            from vigpt_researcher.llm_provider import GenericLLMProvider
+            return GenericLLMProvider.from_provider(llm_provider, **kwargs)
+        
+    return llm_provider(**kwargs)
 
 async def create_chat_completion(
         messages: list,  # type: ignore
@@ -20,6 +32,7 @@ async def create_chat_completion(
         llm_provider: Optional[str] = None,
         stream: Optional[bool] = False,
         websocket: WebSocket | None = None,
+        llm_kwargs: Dict[str, Any] | None = None
 ) -> str:
     """Create a chat completion using the OpenAI API
     Args:
@@ -39,16 +52,27 @@ async def create_chat_completion(
         raise ValueError("Model cannot be None")
     if max_tokens is not None and max_tokens > 8001:
         raise ValueError(f"Max tokens cannot be more than 8001, but got {max_tokens}")
+    
+    # Ensure llm_kwargs is a dictionary
+    if llm_kwargs is None:
+        llm_kwargs = {}
+    
+    provider = get_llm(llm_provider, model=model, temperature=temperature, max_tokens=max_tokens, **llm_kwargs)
+    
+    response = ""
 
     # create response
-    for attempt in range(10):  # maximum of 10 attempts
-        response = await send_chat_completion_request(
-            messages, model, temperature, max_tokens, stream, llm_provider, websocket
+    for _ in range(10):  # maximum of 10 attempts
+        response = await provider.get_chat_response(
+            messages=messages, stream=stream, websocket=websocket
         )
+        # response = await send_chat_completion_request(
+        #     messages, model, temperature, max_tokens, stream, llm_provider, websocket
+        # )
         return response
 
-    logging.error("Failed to get response from OpenAI API")
-    raise RuntimeError("Failed to get response from OpenAI API")
+    logging.error("Failed to get response from {llm_provider} API")
+    raise RuntimeError("Failed to get response from {llm_provider} API")
 
 
 import logging
@@ -65,7 +89,11 @@ async def send_chat_completion_request(
             max_tokens=max_tokens,
             provider=llm_provider,  # Change provider here to use a different API
         )
-        return result["choices"][0]["message"]["content"]
+        """ 
+        Documentation for OpenAI Chat Completion API:
+        https://platform.openai.com/docs/guides/text-generation/chat-completions-api
+        """
+        return result["choices"][0]["message"]["content"] 
     else:
         return await stream_response(model, messages, temperature, max_tokens, llm_provider, websocket)
 
