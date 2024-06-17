@@ -2,6 +2,11 @@ from concurrent.futures.thread import ThreadPoolExecutor # ThreadPoolExecutor is
 from langchain_community.document_loaders import PyMuPDFLoader # PyMuPDFLoader is used to load PDFs
 from langchain_community.retrievers import ArxivRetriever # ArxivRetriever is used to retrieve papers from arxiv
 from functools import partial 
+""" 
+functools.partial function in Python is used to fix a certain number of arguments of a function and generate a new function.
+This new function takes the remaining arguments as input and keeps the fixed arguments fixed.
+It is useful when we want to pass a function as an argument to another function, but need to fix some of the arguments.
+"""
 import requests # requests is used to make HTTP requests
 from bs4 import BeautifulSoup # BeautifulSoup is used to parse HTML
 
@@ -17,10 +22,10 @@ class Scraper:
             urls:
         """
         self.urls = urls
-        self.session = requests.Session()
+        self.session = requests.Session() # for persistent connection
         self.session.headers.update({
             "User-Agent": user_agent
-        })
+        }) # Identify the user agent to the server such as browser, device, etc.
 
     def run(self):
         """
@@ -41,7 +46,7 @@ class Scraper:
             if link.endswith(".pdf"):
                 content = self.scrape_pdf_with_pymupdf(link)
             elif "arxiv.org" in link:
-                doc_num = link.split("/")[-1]
+                doc_num = link.split("/")[-1] # Extract the document number from the link 
                 content = self.scrape_pdf_with_arxiv(doc_num)
             elif link:
                 content = self.scrape_text_with_bs(link, session)
@@ -53,14 +58,16 @@ class Scraper:
             return {'url': link, 'raw_content': None}
 
     def scrape_text_with_bs(self, link, session):
+        # We use get method of requests module to get the content of the webpage
+        # Session object allows us to persist certain parameters across requests (like headers or cookies)
         response = session.get(link, timeout=4)
         soup = BeautifulSoup(response.content, 'lxml', from_encoding=response.encoding)
 
         for script_or_style in soup(["script", "style"]):
-            script_or_style.extract()
+            script_or_style.extract() # Remove <script> and <style> tags from the soup
 
         raw_content = self.get_content_from_url(soup)
-        lines = (line.strip() for line in raw_content.splitlines())
+        lines = (line.strip() for line in raw_content.splitlines()) # Split the raw content into lines
         chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
         content = "\n".join(chunk for chunk in chunks if chunk)
         return content
@@ -103,6 +110,6 @@ class Scraper:
         """
         text = ""
         tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5']
-        for element in soup.find_all(tags):  # Find all the <p> elements
+        for element in soup.find_all(tags):
             text += element.text + "\n"
         return text
