@@ -16,6 +16,10 @@ This repository was inspired by the [ViGPTQA](https://aclanthology.org/2023.emnl
 ## Run app
 1. Run the app with the following command:
 ```
+    python main.py
+```
+Or you can run with Uvicorn:
+```
     python -m uvicorn app:main --reload
 ```
 2. Or Run with docker-compose:
