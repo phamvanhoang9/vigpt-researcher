@@ -24,3 +24,4 @@ jinja2
 aiofiles
 langchain_community
 langchain-openai
+langchain-google-genai 
