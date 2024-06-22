@@ -18,7 +18,7 @@ class Memory:
             case "openai":
                 _embeddings = OpenAIEmbeddings(model=OPENAI_EMBEDDING_MODEL)
             case "huggingface":
-                from langchain.embeddings import HuggingFaceEmbeddings
+                from langchain_community.embeddings import HuggingFaceEmbeddings
                 _embeddings = HuggingFaceEmbeddings()
             case _:
                 raise Exception("Embdding provider not found.")
