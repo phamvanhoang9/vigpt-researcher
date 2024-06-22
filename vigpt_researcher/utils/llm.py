@@ -62,17 +62,18 @@ async def create_chat_completion(
     response = ""
 
     # create response
-    for _ in range(10):  # maximum of 10 attempts
+    for attempt in range(10):  # maximum of 10 attempts
         response = await provider.get_chat_response(
             messages=messages, stream=stream, websocket=websocket
         )
         # response = await send_chat_completion_request(
         #     messages, model, temperature, max_tokens, stream, llm_provider, websocket
         # )
+        
         return response
 
-    logging.error("Failed to get response from {llm_provider} API")
-    raise RuntimeError("Failed to get response from {llm_provider} API")
+    logging.error("Failed to get response from {llm_provider} API after 10 attempts")
+    raise RuntimeError("Failed to get response from {llm_provider} API after 10 attempts")
 
 
 import logging
